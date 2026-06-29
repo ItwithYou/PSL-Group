@@ -326,7 +326,7 @@ function initFilter() {
 function initModals() {
     const modal = document.getElementById('project-modal');
     const closeBtn = document.getElementById('modal-close');
-    const projectCards = document.querySelectorAll('.project-card');
+    const projectCards = document.querySelectorAll('.vision-glass-card');
 
     projectCards.forEach(card => {
         card.addEventListener('click', () => {

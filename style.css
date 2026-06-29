@@ -3887,3 +3887,5 @@ html, body {
         max-width: 100% !important;
     }
 }
+
+.vision-glass-card { cursor: pointer !important; }
