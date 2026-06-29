@@ -187,6 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initFilter();
     initModals();
     initScrollAnimations();
+    fetchAndRenderActivities();
 });
 
 // Theme Setup
@@ -448,11 +449,20 @@ async function fetchAndRenderActivities() {
     if (!feedContainer) return;
 
     try {
-        const response = await fetch('/api/activities');
-        if (!response.ok) throw new Error('Network response was not ok');
-        
-        const activities = await response.json();
-        
+        // Try the live API first (when the Node server is running).
+        // Fall back to the static data.json file so the feed still works
+        // on static hosts like GitHub Pages.
+        let activities;
+        try {
+            const response = await fetch('/api/activities');
+            if (!response.ok) throw new Error('API unavailable');
+            activities = await response.json();
+        } catch (apiError) {
+            const staticResponse = await fetch('data.json');
+            if (!staticResponse.ok) throw new Error('Could not load activity data');
+            activities = await staticResponse.json();
+        }
+
         if (activities.length === 0) {
             feedContainer.innerHTML = `<p style="text-align:center; color:var(--text-muted); grid-column: 1/-1;" data-en="No recent activities posted." data-la="ຍັງບໍ່ມີຂ່າວສານໃໝ່ໃນຕອນນີ້." data-zh="暂无近期活动。">No recent activities posted.</p>`;
             return;
@@ -488,11 +498,6 @@ async function fetchAndRenderActivities() {
         
     } catch (error) {
         console.error('Error fetching activities:', error);
-        feedContainer.innerHTML = `<p style="text-align:center; color:red; grid-column: 1/-1;">Error loading activities. Ensure Node.js server is running.</p>`;
+        feedContainer.innerHTML = `<p style="text-align:center; color:var(--text-muted); grid-column: 1/-1;">Unable to load activities right now.</p>`;
     }
 }
-
-// Call on load
-document.addEventListener('DOMContentLoaded', () => {
-    fetchAndRenderActivities();
-});
