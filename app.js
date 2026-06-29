@@ -18,67 +18,67 @@ const translations = {
         },
                 visionList: {
             en: `<div class="vision-glass-grid">
-    <div class="vision-glass-card animate-on-scroll card-honesty">
+    <div class="vision-glass-card card-honesty">
         <div class="glass-icon">🛡️</div>
         <div class="glass-text">1. Honesty, transparency, and sincerity</div>
     </div>
-    <div class="vision-glass-card animate-on-scroll card-safety">
+    <div class="vision-glass-card card-safety">
         <div class="glass-icon">👷</div>
         <div class="glass-text">2. Working with safety</div>
     </div>
-    <div class="vision-glass-card animate-on-scroll card-quality">
+    <div class="vision-glass-card card-quality">
         <div class="glass-icon">💎</div>
         <div class="glass-text">3. Paying attention to good quality</div>
     </div>
-    <div class="vision-glass-card animate-on-scroll card-art">
+    <div class="vision-glass-card card-art">
         <div class="glass-icon">🎨</div>
         <div class="glass-text">4. Incorporating artistic beauty</div>
     </div>
-    <div class="vision-glass-card animate-on-scroll card-time">
+    <div class="vision-glass-card card-time">
         <div class="glass-icon">⏱️</div>
         <div class="glass-text">5. Completing work on time</div>
     </div>
 </div>`,
             la: `<div class="vision-glass-grid">
-    <div class="vision-glass-card animate-on-scroll card-honesty">
+    <div class="vision-glass-card card-honesty">
         <div class="glass-icon">🛡️</div>
         <div class="glass-text">1. ມີຄວາມສັດຊື່ ໂປ່ງໃສ ແລະ ຈິງໃຈ</div>
     </div>
-    <div class="vision-glass-card animate-on-scroll card-safety">
+    <div class="vision-glass-card card-safety">
         <div class="glass-icon">👷</div>
         <div class="glass-text">2. ເຮັດວຽກມີຄວາມປອດໄພ</div>
     </div>
-    <div class="vision-glass-card animate-on-scroll card-quality">
+    <div class="vision-glass-card card-quality">
         <div class="glass-icon">💎</div>
         <div class="glass-text">3. ໃສ່ໃຈຄຸນນະພາບທີ່ດີ</div>
     </div>
-    <div class="vision-glass-card animate-on-scroll card-art">
+    <div class="vision-glass-card card-art">
         <div class="glass-icon">🎨</div>
         <div class="glass-text">4. ມີສິນລະປະຄວາມສວຍງາມ</div>
     </div>
-    <div class="vision-glass-card animate-on-scroll card-time">
+    <div class="vision-glass-card card-time">
         <div class="glass-icon">⏱️</div>
         <div class="glass-text">5. ວຽກສຳເລັດຕາມກຳນົດເວລາ</div>
     </div>
 </div>`,
             zh: `<div class="vision-glass-grid">
-    <div class="vision-glass-card animate-on-scroll card-honesty">
+    <div class="vision-glass-card card-honesty">
         <div class="glass-icon">🛡️</div>
         <div class="glass-text">1. 诚实、透明和真诚</div>
     </div>
-    <div class="vision-glass-card animate-on-scroll card-safety">
+    <div class="vision-glass-card card-safety">
         <div class="glass-icon">👷</div>
         <div class="glass-text">2. 安全工作</div>
     </div>
-    <div class="vision-glass-card animate-on-scroll card-quality">
+    <div class="vision-glass-card card-quality">
         <div class="glass-icon">💎</div>
         <div class="glass-text">3. 注重优良品质</div>
     </div>
-    <div class="vision-glass-card animate-on-scroll card-art">
+    <div class="vision-glass-card card-art">
         <div class="glass-icon">🎨</div>
         <div class="glass-text">4. 融入艺术美感</div>
     </div>
-    <div class="vision-glass-card animate-on-scroll card-time">
+    <div class="vision-glass-card card-time">
         <div class="glass-icon">⏱️</div>
         <div class="glass-text">5. 按时完成工作</div>
     </div>
