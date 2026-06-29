@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+
+# Runtime uploads (served locally by the Node server)
+uploads/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
