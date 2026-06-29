@@ -1165,6 +1165,7 @@ textarea.form-input {
     color: var(--text-muted);
     font-weight: 300;
     margin: 0 0 1.1rem 0;
+    flex-grow: 1;
 }
 
 .spec-chips {
@@ -2342,7 +2343,7 @@ textarea.form-input {
    Corporate Portfolio Section (New Projects Tab)
    ========================================================================== */
 .portfolio-section {
-    padding: 4rem 2rem;
+    padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
