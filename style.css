@@ -1038,6 +1038,161 @@ textarea.form-input {
     margin-bottom: 0.5rem;
 }
 
+/* ---------------------------------------------------------------------------
+   Premium Project Portfolio (structured groups → entries → spec chips)
+   --------------------------------------------------------------------------- */
+.portfolio-lead {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--text-color);
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+}
+
+.portfolio-group {
+    margin-bottom: 3rem;
+}
+
+.portfolio-group:last-child {
+    margin-bottom: 0;
+}
+
+.portfolio-group-title {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    line-height: 1.3;
+}
+
+.portfolio-group-title .group-index {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.project-entries {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.project-entry {
+    position: relative;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    overflow: hidden;
+    transition: var(--transition-quick);
+}
+
+.project-entry::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--accent-color);
+    opacity: 0.6;
+    transition: var(--transition-quick);
+}
+
+.project-entry:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-color);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+.project-entry:hover::before {
+    opacity: 1;
+}
+
+.project-entry-name {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 1.35;
+    margin: 0 0 0.6rem 0;
+}
+
+.project-entry-detail {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin: 0 0 1.1rem 0;
+}
+
+.spec-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.spec-chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    background-color: var(--border-light);
+    border: 1px solid var(--border-color);
+    font-size: 0.8rem;
+    line-height: 1;
+}
+
+.spec-chip-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.spec-chip-value {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Accent "tag" chip (e.g. client / category) */
+.spec-chip--tag {
+    background-color: rgba(196, 169, 127, 0.14);
+    border-color: rgba(196, 169, 127, 0.4);
+    background-color: color-mix(in srgb, var(--accent-color) 14%, transparent);
+    border-color: color-mix(in srgb, var(--accent-color) 35%, transparent);
+}
+
+.spec-chip--tag .spec-chip-value {
+    color: var(--accent-color);
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+/* Spacing for the sub-group titles inside the portfolio grid */
+.past-projects-grid .portfolio-group-title {
+    margin-top: 3rem;
+}
+
+.past-projects-grid .portfolio-group-title:first-child {
+    margin-top: 0;
+}
+
 /* Animations */
 @keyframes slideUp {
     from {
