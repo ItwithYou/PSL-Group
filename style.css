@@ -352,6 +352,17 @@ html[lang="zh"] .lang-btn-option[data-lang="zh"] {
     width: 65%;
 }
 
+.vision-paragraph {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+
 .hero-pillars-row {
     display: flex;
     flex-direction: row;
@@ -1223,36 +1234,51 @@ textarea.form-input {
     gap: 1.25rem;
 }
 
+
+
+
 .project-entry {
-    position: relative;
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 12px;
     overflow: hidden;
-    transition: var(--transition-quick);
-}
-
-.project-entry::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    background-color: var(--accent-color);
-    opacity: 0.6;
-    transition: var(--transition-quick);
+    cursor: pointer;
 }
-
 .project-entry:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     border-color: var(--accent-color);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
 }
-
-.project-entry:hover::before {
-    opacity: 1;
+[data-theme="dark"] .project-entry:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+.project-img-wrap {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+.project-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.project-entry:hover .project-card-img {
+    transform: scale(1.08);
+}
+.project-info-container {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.spec-chips {
+    margin-top: auto; /* push chips to bottom */
 }
 
 .project-entry-name {

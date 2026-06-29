@@ -584,3 +584,33 @@ async function fetchAndRenderActivities() {
         }
         lastScrollY = currentScrollY;
     }, { passive: true });
+
+
+// Lightbox Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    if (!lightbox) return;
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+
+    // Add click to all project images
+    document.querySelectorAll('.project-card-img').forEach(img => {
+        img.style.cursor = 'pointer';
+        // Add click listener to the whole card for better UX, or just image
+        img.addEventListener('click', (e) => {
+            e.stopPropagation(); // prevent card click if we had one
+            lightbox.style.display = 'block';
+            lightboxImg.src = img.src;
+        });
+    });
+
+    // Close logic
+    closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+    lightbox.addEventListener('click', (e) => {
+        if (e.target !== lightboxImg) {
+            lightbox.style.display = 'none';
+        }
+    });
+});
