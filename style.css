@@ -1,25 +1,25 @@
 /* Custom CSS Design system for PSL Group */
 
 :root {
-    /* Color Palette - Light Theme (Sophisticated Warm Minimal) */
-    --bg-color: #f7f6f2;
-    --text-color: #151515;
-    --text-muted: #6f6f6f;
-    --border-color: #d1cfc9;
-    --border-light: #e5e3dd;
-    --accent-color: #bfa15f;
-    --accent-dark: #8c7340;
+    /* Color Palette - Light Theme (Phongsupthavy Corporate) */
+    --bg-color: #F8F9FA;
+    --text-color: #0A2540; /* Conglomerate Navy */
+    --text-muted: #4a5568;
+    --border-color: #e2e8f0;
+    --border-light: #edf2f7;
+    --accent-color: #C5A059; /* Royal Gold */
+    --accent-dark: #A38241;
     --card-bg: #ffffff;
-    --dock-bg: rgba(255, 255, 255, 0.7);
-    --dock-border: rgba(21, 21, 21, 0.08);
-    --dock-text: #151515;
-    --dock-indicator: #151515;
-    --modal-bg: #f7f6f2;
+    --dock-bg: rgba(255, 255, 255, 0.75);
+    --dock-border: rgba(10, 37, 64, 0.08);
+    --dock-text: #0A2540;
+    --dock-indicator: #0A2540;
+    --modal-bg: #F8F9FA;
     --success-bg: #e8f5e9;
     --success-text: #2e7d32;
     
     /* Typography & Spacing */
-    --font-primary: 'Outfit', 'Noto Sans Lao', sans-serif;
+    --font-primary: 'Inter', 'Montserrat', 'Noto Sans Lao', sans-serif;
     --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-quick: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -1179,12 +1179,11 @@ textarea.form-input {
 }
 
 .project-entry-detail {
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.6;
     color: var(--text-muted);
-    font-weight: 300;
-    margin: 0 0 1.1rem 0;
-    flex-grow: 1;
+    font-weight: 400;
+    margin: 0 0 1.5rem 0;
 }
 
 .spec-chips {
