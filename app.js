@@ -614,3 +614,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Mobile Dock Toggle Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const dockToggle = document.getElementById('mobile-dock-toggle');
+    const floatingDock = document.getElementById('floating-dock');
+    
+    if(dockToggle && floatingDock) {
+        dockToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            floatingDock.classList.toggle('show');
+        });
+        
+        // Hide dock when clicking anywhere else
+        document.addEventListener('click', (e) => {
+            if(!floatingDock.contains(e.target) && !dockToggle.contains(e.target)) {
+                floatingDock.classList.remove('show');
+            }
+        });
+        
+        // Hide dock when a tab is clicked
+        const dockItems = floatingDock.querySelectorAll('.dock-item');
+        dockItems.forEach(item => {
+            item.addEventListener('click', () => {
+                floatingDock.classList.remove('show');
+            });
+        });
+    }
+});
