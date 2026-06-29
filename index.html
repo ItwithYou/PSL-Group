@@ -7,8 +7,8 @@
     <meta name="description" content="PSL Group is a premier multi-disciplinary conglomerate based in Laos. Specializing in major infrastructure, public works, and enterprise logistics services.">
 
     <!-- Favicon (shows the PSL logo in the browser tab) -->
-    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
-    <link rel="apple-touch-icon" href="assets/logo.svg">
+    <link rel="icon" type="image/png" href="assets/logo_transparent.png">
+    <link rel="apple-touch-icon" href="assets/logo_transparent.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,13 +20,65 @@
 </head>
 <body>
 
+    <!-- Ambient Background Mesh -->
+    <div class="premium-mesh-bg"></div>
+    
+
     <!-- Header Navigation -->
     <header class="header">
         <div class="header-container">
             <a href="#" class="brand-logo" id="brand-logo">
-                <img src="assets/logo.svg" alt="PSL Group logo" class="brand-logo-img">
+                <img src="assets/logo_transparent.png" alt="PSL Group logo" class="brand-logo-img">
                 <span class="logo-text">PSL Group</span>
             </a>
+            
+            <nav class="dock-container">
+                <div class="floating-dock">
+                    <div class="dock-list">
+                        <a href="#home" class="dock-item active" id="dock-home">
+                            <span class="dock-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>
+                            <span class="dock-label">
+                                <span class="en-text">Home</span>
+                                <span class="lao-text">ໜ້າຫຼັກ</span>
+                                <span class="zh-text">首页</span>
+                            </span>
+                        </a>
+                        <a href="#about" class="dock-item" id="dock-about">
+                            <span class="dock-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></span>
+                            <span class="dock-label">
+                                <span class="en-text">About</span>
+                                <span class="lao-text">ກ່ຽວກັບ</span>
+                                <span class="zh-text">关于</span>
+                            </span>
+                        </a>
+                        <a href="#projects" class="dock-item" id="dock-projects">
+                            <span class="dock-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/></svg></span>
+                            <span class="dock-label">
+                                <span class="en-text">Projects</span>
+                                <span class="lao-text">ໂຄງການ</span>
+                                <span class="zh-text">项目</span>
+                            </span>
+                        </a>
+                        <a href="#activity" class="dock-item" id="dock-activity">
+                            <span class="dock-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8z"/></svg></span>
+                            <span class="dock-label">
+                                <span class="en-text">News</span>
+                                <span class="lao-text">ຂ່າວສານ</span>
+                                <span class="zh-text">新闻</span>
+                            </span>
+                        </a>
+                        <a href="#contact" class="dock-item" id="dock-contact">
+                            <span class="dock-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+                            <span class="dock-label">
+                                <span class="en-text">Contact</span>
+                                <span class="lao-text">ຕິດຕໍ່</span>
+                                <span class="zh-text">联系</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            
             <div class="header-controls">
                 <div class="lang-switch-toggle" id="lang-toggle-btn">
                     <div class="lang-toggle-bg"></div>
@@ -47,7 +99,7 @@
     
         <main class="main-content">
         <!-- TAB: HOME -->
-        <div class="tab-content active" id="tab-home">
+        <section class="page-section" id="home">
 <section class="hero-section">
             <div class="hero-grid">
                 <div class="hero-intro">
@@ -62,20 +114,48 @@
                 </div>
                 <div class="hero-meta">
                     <div class="meta-item">
-                        <span class="meta-label" data-en="CEO / PRESIDENT" data-la="ປະທານບໍລິສັດ" data-zh="总裁 / 首席执行官">CEO / PRESIDENT</span>
-                        <span class="meta-value" data-en="Mrs. Thepphalak Khavisorn" data-la="ທ່ານ ນາງ ເທບພະລັກ ຄາວີສອນ" data-zh="Thepphalak Khavisorn 女士">Mrs. Thepphalak Khavisorn</span>
+                        <div class="meta-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg>
+                        </div>
+                        <div class="meta-content">
+                            <span class="meta-label" data-en="CEO / PRESIDENT" data-la="ປະທານບໍລິສັດ" data-zh="总裁 / 首席执行官">CEO / PRESIDENT</span>
+                            <span class="meta-value" data-en="Mrs. Thepphalak Khavisorn" data-la="ທ່ານ ນາງ ເທບພະລັກ ຄາວີສອນ" data-zh="Thepphalak Khavisorn 女士">Mrs. Thepphalak Khavisorn</span>
+                        </div>
                     </div>
+                    
                     <div class="meta-item">
-                        <span class="meta-label" data-en="ADDRESS" data-la="ທີ່ຢູ່" data-zh="地址">ADDRESS</span>
-                        <span class="meta-value" data-en="Nongtha Tai Village, Chanthabouly District, Vientiane" data-la="ບ້ານໜອງທາໃຕ້, ເມືອງຈັນທະບູລີ, ນະຄອນຫຼວງວຽງຈັນ" data-zh="老挝万象市占塔布里县农塔泰村">Nongtha Tai Village, Chanthabouly District, Vientiane</span>
+                        <div class="meta-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                        </div>
+                        <div class="meta-content">
+                            <span class="meta-label" data-en="ADDRESS" data-la="ທີ່ຢູ່" data-zh="地址">ADDRESS</span>
+                            <span class="meta-value" data-en="Nongtha Tai Village, Chanthabouly District, Vientiane" data-la="ບ້ານໜອງທາໃຕ້, ເມືອງຈັນທະບູລີ, ນະຄອນຫຼວງວຽງຈັນ" data-zh="老挝万象市占塔布里县农塔泰村">Nongtha Tai Village, Chanthabouly District, Vientiane</span>
+                        </div>
                     </div>
+                    
                     <div class="meta-item">
-                        <span class="meta-label" data-en="CONTACT NUMBER" data-la="ເບີໂທລະສັບ" data-zh="联系电话">CONTACT NUMBER</span>
-                        <span class="meta-value">+856 20 2898 8888</span>
+                        <div class="meta-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+                        </div>
+                        <div class="meta-content">
+                            <span class="meta-label" data-en="CONTACT NUMBER" data-la="ເບີໂທລະສັບ" data-zh="联系电话">CONTACT NUMBER</span>
+                            <a href="https://wa.me/8562028988888" target="_blank" class="meta-value phone-link" title="Chat on WhatsApp">
+                                +856 20 2898 8888
+                            </a>
+                        </div>
                     </div>
+                    
                     <div class="meta-item">
-                        <span class="meta-label" data-en="COMPANY VISION" data-la="ວິໄສທັດຂອງບໍລິສັດ" data-zh="公司愿景">COMPANY VISION</span>
-                        <span class="meta-value" data-en="Sustainable Development & Synergy" data-la="ການພັດທະນາແບບຍືນຍົງ ແລະ ການຮ່ວມມື" data-zh="可持续发展与协同">Sustainable Development & Synergy</span>
+                        <div class="meta-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/></svg>
+                        </div>
+                        <div class="meta-content">
+                            <span class="meta-label" data-en="EMAIL & WEBSITE" data-la="ອີເມວ ແລະ ເວັບໄຊທ໌" data-zh="电子邮件与网站">EMAIL & WEBSITE</span>
+                            <div class="contact-links-group">
+                                <a href="mailto:info@psl-group.com" class="meta-value contact-link">info@psl-group.com</a>
+                                <a href="#" class="meta-value contact-link">www.psl-group.com</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -89,14 +169,14 @@
                     </p>
                     <ul class="vision-list" id="vision-list">
                         <!-- Content injected by JS -->
-                    </ul>
+                    </nav>
                 </div>
             </div>
         </section>
-        </div>
+        </section>
 
         <!-- TAB: ABOUT US -->
-        <div class="tab-content" id="tab-about">
+        <section class="page-section" id="about">
 
         <section class="about-section" id="about">
             <div class="org-header">
@@ -133,32 +213,32 @@
                 <div class="section-divider"></div>
             </div>
 
-            <!-- Hand-drawn style Roadmap -->
+            <!-- Horizontal Timeline -->
             <div class="roadmap-path-container">
-                <div class="roadmap-stop left-stop">
-                    <div class="roadmap-point"></div>
-                    <div class="roadmap-card">
-                        <span class="roadmap-year">2015</span>
-                        <h4 data-en="Establishment & Foundations" data-la="ກໍ່ຕັ້ງກຸ່ມບໍລິສັດ" data-zh="成立与基础">Establishment & Foundations</h4>
-                        <p data-en="Founded PSL Group with PSL Construction. Secured major infrastructure projects in Central Laos." data-la="ກໍ່ຕັ້ງກຸ່ມບໍລິສັດ PSL ໂດຍເລີ່ມຈາກທຸລະກິດກໍ່ສ້າງ ແລະ ໄດ້ຮັບໂຄງການພັດທະນາໂຄງລ່າງພື້ນຖານຂະໜາດໃຫຍ່." data-zh="与 PSL 建筑一起成立了 PSL 集团。在老挝中部获得了主要的基础设施项目。"></p>
-                    </div>
-                </div>
-
-                <div class="roadmap-stop right-stop">
+                <div class="roadmap-stop">
                     <div class="roadmap-point"></div>
                     <div class="roadmap-card">
                         <span class="roadmap-year">2018</span>
-                        <h4 data-en="Expansion into Logistics" data-la="ຂະຫຍາຍສູ່ການບໍລິການໂລຈິດສະຕິກ" data-zh="扩展到物流">Expansion into Logistics</h4>
-                        <p data-en="Launched PSL Service, establishing cold chain warehouses and cross-border transport corridors." data-la="ເປີດຕົວ ບໍລິສັດ ບໍລິການ PSL ເພື່ອສ້າງສາງເກັບຮັກສາຄວາມເຢັນ ແລະ ເສັ້ນທາງການຂົນສົ່ງສິນຄ້າຂ້າມແດນ." data-zh="推出了 PSL 服务，建立冷链仓库和跨境运输走廊。"></p>
+                        <h4 data-en="Founding Year" data-la="ປີແຫ່ງການກໍ່ຕັ້ງ" data-zh="成立之年">Founding Year</h4>
+                        <p data-en="Officially established by 100% Lao investors to conduct construction business and infrastructure development." data-la="ປີແຫ່ງການກໍ່ຕັ້ງບໍລິສັດ ພີເອັດສແອວ ກໍ່ສ້າງຄົບວົງຈອນ ຈຳກັດຜູ້ດຽວ ໄດ້ສ້າງຕັ້ງຂຶ້ນຢ່າງເປັນທາງການ ໂດຍນັກລົງທຶນລາວ 100% ເພື່ອດຳເນີນທຸລະກິດການກໍ່ສ້າງ ແລະ ພັດທະນາພື້ນຖານໂຄງລ່າງ." data-zh="由 100% 老挝投资者正式成立，致力于开展建筑业务和基础设施开发。"></p>
                     </div>
                 </div>
 
-                <div class="roadmap-stop left-stop">
+                <div class="roadmap-stop">
                     <div class="roadmap-point"></div>
                     <div class="roadmap-card">
-                        <span class="roadmap-year">2026</span>
-                        <h4 data-en="Strategic Integration" data-la="ການເຊື່ອມໂຍງຍຸດທະສາດ" data-zh="战略整合">Strategic Integration</h4>
-                        <p data-en="Unified all subsidiaries under the modern PSL Group management system, advancing eco-friendly development." data-la="ຮວມທຸກບໍລິສັດໃນເຄືອພາຍໃຕ້ລະບົບການບໍລິຫານຈັດການແບບໃໝ່ ເພື່ອມຸ່ງເນັ້ນການພັດທະນາທີ່ເປັນມິດຕໍ່ສິ່ງແວດລ້ອມ." data-zh="在现代 PSL 集团管理系统下统一下属所有子公司，推进环保发展。"></p>
+                        <span class="roadmap-year">2020</span>
+                        <h4 data-en="Expansion & National Service" data-la="ການຂະຫຍາຍຕົວ ແລະ ຮັບໃຊ້ຊາດ" data-zh="业务扩张与服务国家">Expansion & National Service</h4>
+                        <p data-en="Received full business operation permits and began implementing major infrastructure projects in both the capital and provinces." data-la="ໄດ້ຮັບການອະນຸຍາດດຳເນີນທຸລະກິດຢ່າງເຕັມຮູບແບບ ແລະ ເລີ່ມຈັດຕັ້ງປະຕິບັດໂຄງການພື້ນຖານໂຄງລ່າງທີ່ສຳຄັນທັງໃນນະຄອນຫຼວງ ແລະ ຕ່າງແຂວງ." data-zh="获得全面业务运营许可，并开始在首都及各省实施重大基础设施项目。"></p>
+                    </div>
+                </div>
+
+                <div class="roadmap-stop">
+                    <div class="roadmap-point"></div>
+                    <div class="roadmap-card">
+                        <span class="roadmap-year">2025</span>
+                        <h4 data-en="Stepping into PSL Group" data-la="ກ້າວສູ່ PSL Group" data-zh="迈向 PSL 集团">Stepping into PSL Group</h4>
+                        <p data-en="Upgraded structure to 'PSL Group'. Expanded services to cover government procurement, national defense strategic projects, and modern tech development." data-la="ຍົກລະດັບໂຄງຮ່າງການຈັດຕັ້ງເປັນ 'ກຸ່ມບໍລິສັດ PSL Group'. ຂະຫຍາຍຂອບເຂດການບໍລິການກວມເອົາວຽກງານຈັດຊື້-ຈັດຈ້າງພາກລັດ, ໂຄງການຍຸດທະສາດປ້ອງກັນຊາດ ແລະ ພັດທະນາເຕັກໂນໂລຊີທີ່ທັນສະໄໝ." data-zh="将组织结构升级为'PSL 集团'。服务范围扩展至涵盖政府采购、国防战略项目及现代技术开发。"></p>
                     </div>
                 </div>
             </div>
@@ -270,10 +350,10 @@
                 </div>
             </div>
         </section>
-        </div>
+        </section>
 
         <!-- TAB: PROJECTS -->
-        <div class="tab-content" id="tab-projects">
+        <section class="page-section" id="projects">
 <section class="portfolio-section" id="projects">
     <div class="portfolio-header">
         <h2 class="section-title" data-en="Corporate Portfolio" data-la="ຜົນງານ ແລະ ໂຄງການ" data-zh="企业项目组合">Corporate Portfolio</h2>
@@ -284,8 +364,7 @@
     <!-- Tier 1: Priority Strategic Projects -->
     <div class="portfolio-tier">
         <div class="tier-header">
-            <h3 data-en="Group I: Priority Strategic Projects" data-la="ກຸ່ມທີ I: ໂຄງການຍຸດທະສາດບູລິມະສິດ" data-zh="第一组：优先战略项目">Group I: Priority Strategic Projects</h3>
-            <span class="tier-badge">> 5,400 Billion LAK</span>
+            <h3 data-en="Priority Strategic Projects" data-la="ໂຄງການຍຸດທະສາດບູລິມະສິດ" data-zh="优先战略项目">Priority Strategic Projects</h3>
         </div>
         
         <div class="tier-grid">
@@ -294,8 +373,7 @@
                 <div class="card-glass-bg"></div>
                 <div class="card-content">
                     <div class="card-icon">🛡️</div>
-                    <h4 data-en="Ministry of Defense Strategic Projects" data-la="ໂຄງການຍຸດທະສາດຂອງ ກະຊວງປ້ອງກັນປະເທດ" data-zh="国防部战略项目">Ministry of Defense Strategic Projects</h4>
-                    <p class="card-value">> 3,000 Billion LAK</p>
+                    <h4 data-en="Strategic Building and Construction Projects" data-la="ໂຄງການກໍ່ສ້າງອາຄານ ແລະ ສິ່ງປຸກສ້າງຍຸດທະສາດ" data-zh="战略建筑与施工项目">Strategic Building and Construction Projects</h4>
                     <ul class="card-list">
                         <li data-en="Military Equipment Procurement" data-la="ວຽກງານຈັດຊື້ອຸປະກອນຮັບໃຊ້ກອງທັບ" data-zh="军事装备采购">Military Equipment Procurement</li>
                         <li data-en="Medical & Pharmaceutical Tech Factory" data-la="ໂຮງງານພັດທະນາເຕັກໂນໂລຊີການຢາ-ການແພດ" data-zh="医疗和制药技术工厂">Medical & Pharmaceutical Tech Factory</li>
@@ -312,7 +390,6 @@
                 <div class="card-content">
                     <div class="card-icon">🛣️</div>
                     <h4 data-en="Vientiane 10 Roads Project" data-la="ໂຄງການກໍ່ສ້າງເສັ້ນທາງ 10 ເສັ້ນ ຢູ່ນະຄອນຫຼວງວຽງຈັນ" data-zh="万象10条道路项目">Vientiane 10 Roads Project</h4>
-                    <p class="card-value">> 2,000 Billion LAK</p>
                     <p class="card-desc" data-en="Extensive urban infrastructure improvement project across the capital city. Currently, over 1,000 Billion LAK has been successfully executed." data-la="ໂຄງການປັບປຸງໂຄງລ່າງພື້ນຖານໃນນະຄອນຫຼວງ. ປັດຈຸບັນປະຕິບັດສໍາເລັດແລ້ວປະມານ 1,000 ຕື້ກີບ." data-zh="首都广泛的城市基础设施改善项目。目前已成功执行超过 1 万亿基普。">Extensive urban infrastructure improvement project across the capital city. Currently, over 1,000 Billion LAK has been successfully executed.</p>
                 </div>
             </div>
@@ -323,7 +400,6 @@
                 <div class="card-content">
                     <div class="card-icon">🌊</div>
                     <h4 data-en="Khammouane Riverbank Protection" data-la="ໂຄງການກໍ່ສ້າງປ້ອງກັນຕາຝັ່ງເຈື່ອນ ແຂວງຄໍາມ່ວນ" data-zh="甘蒙河岸保护">Khammouane Riverbank Protection</h4>
-                    <p class="card-value">~ 2,400 Billion LAK</p>
                     <p class="card-desc" data-en="Construction of a 19-kilometer riverbank protection system spanning the Thakhek district to prevent erosion and secure infrastructure." data-la="ກໍ່ສ້າງປ້ອງກັນຕາຝັ່ງເຈື່ອນລວງຍາວ 19 ກິໂລແມັດ ຢູ່ຂອບເຂດເມືອງທ່າແຂກ." data-zh="在塔克区建设长达 19 公里的河岸保护系统，防止侵蚀并保护基础设施。">Construction of a 19-kilometer riverbank protection system spanning the Thakhek district to prevent erosion and secure infrastructure.</p>
                 </div>
             </div>
@@ -333,7 +409,7 @@
     <!-- Tier 2: Highway Infrastructure -->
     <div class="portfolio-tier">
         <div class="tier-header">
-            <h3 data-en="Group II: National Highway Projects" data-la="ກຸ່ມທີ II: ໂຄງການປັບປຸງເສັ້ນທາງຫຼວງແຫ່ງຊາດ" data-zh="第二组：国道项目">Group II: National Highway Projects</h3>
+            <h3 data-en="National Highway Projects" data-la="ໂຄງການປັບປຸງເສັ້ນທາງຫຼວງແຫ່ງຊາດ" data-zh="国道项目">National Highway Projects</h3>
             <span class="tier-badge">313.6 km Total Length</span>
         </div>
         <p class="tier-subtitle" data-en="Survey, design, and construction projects under OPBRC and PRTC contracts for the Ministry of Public Works and Transport." data-la="ໂຄງການສຶກສາ, ອອກແບບ ແລະ ກໍ່ສ້າງ ໃນຮູບແບບສັນຍາ OPBRC ແລະ PRTC." data-zh="公共工程和运输部 OPBRC 和 PRTC 合同下的勘测、设计和建设项目。">Survey, design, and construction projects under OPBRC and PRTC contracts for the Ministry of Public Works and Transport.</p>
@@ -380,7 +456,7 @@
     <!-- Tier 3: Past Experience -->
     <div class="portfolio-tier">
         <div class="tier-header">
-            <h3 data-en="Group III: Past Experience & Legacy" data-la="ກຸ່ມທີ III: ໂຄງການ ແລະ ຜົນງານໃນອະດີດທີ່ຜ່ານມາ" data-zh="第三组：过去经验与成就">Group III: Past Experience & Legacy</h3>
+            <h3 data-en="Past Experience & Legacy" data-la="ໂຄງການ ແລະ ຜົນງານໃນອະດີດທີ່ຜ່ານມາ" data-zh="过去经验与成就">Past Experience & Legacy</h3>
         </div>
         
         <div class="past-projects-grid">
@@ -391,6 +467,9 @@
             <div class="project-entries">
 
                 <article class="project-entry">
+                    <div class="project-img-wrap">
+                        <img src="assets/real_5.png" alt="Pakngum District Roads" class="project-card-img">
+                    </div>
                     <h5 class="project-entry-name" data-en="Pakngum District Roads" data-la="ເສັ້ນທາງ ເມືອງປາກງື່ມ" data-zh="巴俄县道路工程">Pakngum District Roads</h5>
                     <p class="project-entry-detail" data-en="From the Route 13 South junction (Nong Bua Thong) to Mak Hiew village, plus the Sang Sai–Na Fai link, Vientiane Capital." data-la="ແຕ່ສາມແຍກທາງ 13 ໃຕ້ (ບ້ານໜອງບົວທອງ) ຫາ ບ້ານໝາກຮຽວ ແລະ ເສັ້ນທາງຈາກ ບ້ານສ້າງໃສ ຫາ ບ້ານນາຝາຍ, ນະຄອນຫຼວງວຽງຈັນ." data-zh="位于万象市，从13号南线交叉口（农布通村）至马晓村，及桑赛村至那菲村路段。">From the Route 13 South junction (Nong Bua Thong) to Mak Hiew village, plus the Sang Sai–Na Fai link, Vientiane Capital.</p>
                     <div class="spec-chips">
@@ -400,6 +479,9 @@
                 </article>
 
                 <article class="project-entry">
+                    <div class="project-img-wrap">
+                        <img src="assets/real_4.jpg" alt="Hadxaifong Riverside Road" class="project-card-img">
+                    </div>
                     <h5 class="project-entry-name" data-en="Hadxaifong Riverside Road" data-la="ເສັ້ນທາງເບຕົງ ເມືອງຫາດຊາຍຟອງ (ແຄມຂອງ)" data-zh="哈赛丰县沿江公路">Hadxaifong Riverside Road</h5>
                     <p class="project-entry-detail" data-en="Reinforced-concrete Mekong riverside road from the Na Hai junction to Xaifong village." data-la="ເສັ້ນທາງເບຕົງເສີມເຫຼັກ ແຄມຂອງ ຈາກສາມແຍກເຂດບ້ານນາໄຮ ຫາ ບ້ານຊາຍຟອງ." data-zh="钢筋混凝土沿湄公河公路，从那海村交叉口至赛丰村。">Reinforced-concrete Mekong riverside road from the Na Hai junction to Xaifong village.</p>
                     <div class="spec-chips">
@@ -409,6 +491,9 @@
                 </article>
 
                 <article class="project-entry">
+                    <div class="project-img-wrap">
+                        <img src="assets/highway_construction.png" alt="Xaythany Railway-Link Road" class="project-card-img">
+                    </div>
                     <h5 class="project-entry-name" data-en="Xaythany Railway-Link Road" data-la="ເສັ້ນທາງເບຕົງ ເມືອງໄຊທານີ (ເຊື່ອມຕໍ່ທາງລົດໄຟ)" data-zh="赛塔尼县铁路连接路">Xaythany Railway-Link Road</h5>
                     <p class="project-entry-detail" data-en="Reinforced-concrete road from the Laos–China Railway through Houay Teuy village to Non Sa-ard village (Route 10 traffic light)." data-la="ທາງເບຕົງເສີມເຫຼັກ ແຕ່ທາງລົດໄຟລາວ-ຈີນ ຜ່ານບ້ານຫ້ວຍເຕີຍ ຫາ ບ້ານໂນນສະອາດ (ໄຟແດງທາງເລກ 10)." data-zh="钢筋混凝土道路，从老中铁路经会德村至农沙阿村（10号路红绿灯）。">Reinforced-concrete road from the Laos–China Railway through Houay Teuy village to Non Sa-ard village (Route 10 traffic light).</p>
                     <div class="spec-chips">
@@ -418,6 +503,9 @@
                 </article>
 
                 <article class="project-entry">
+                    <div class="project-img-wrap">
+                        <img src="assets/real_2.png" alt="Xiengkho Roads (Houaphanh)" class="project-card-img">
+                    </div>
                     <h5 class="project-entry-name" data-en="Xiengkho Roads (Houaphanh)" data-la="ເສັ້ນທາງປູຢາງ 2 ຊັ້ນ ແລະ ທາງເບຕົງ (ແຂວງຫົວພັນ)" data-zh="香科道路工程（华潘省）">Xiengkho Roads (Houaphanh)</h5>
                     <p class="project-entry-detail" data-en="Two-layer asphalt and concrete roads within Xiengkho town and from Na Tong village to Sop Doung at the Laos–Vietnam border." data-la="ກໍ່ສ້າງພາຍໃນເທດສະບານເມືອງຊຽງຄໍ້ ແລະ ເສັ້ນທາງຈາກບ້ານນາຕອງ ຫາ ສົບດຸງ (ຊາຍແດນລາວ-ຫວຽດນາມ)." data-zh="在香科镇内及从那通村至索栋（老越边境）建设双层沥青及混凝土道路。">Two-layer asphalt and concrete roads within Xiengkho town and from Na Tong village to Sop Doung at the Laos–Vietnam border.</p>
                     <div class="spec-chips">
@@ -427,6 +515,9 @@
                 </article>
 
                 <article class="project-entry">
+                    <div class="project-img-wrap">
+                        <img src="assets/real_1.jpg" alt="Nam Ma River Bridge (Houaphanh)" class="project-card-img">
+                    </div>
                     <h5 class="project-entry-name" data-en="Nam Ma River Bridge (Houaphanh)" data-la="ຂົວເບຕົງເສີມເຫຼັກ ຂ້າມນໍ້າມ່າ (ແຂວງຫົວພັນ)" data-zh="南马河钢筋混凝土大桥（华潘省）">Nam Ma River Bridge (Houaphanh)</h5>
                     <p class="project-entry-detail" data-en="Reinforced-concrete bridge crossing the Nam Ma River from Sop village, Xiengkho district." data-la="ຂົວຂ້າມນໍ້າມ່າ ຈາກບ້ານສົບ ເມືອງຊຽງຄໍ້." data-zh="跨南马河钢筋混凝土大桥，起于香科县索村。">Reinforced-concrete bridge crossing the Nam Ma River from Sop village, Xiengkho district.</p>
                     <div class="spec-chips">
@@ -437,6 +528,9 @@
                 </article>
 
                 <article class="project-entry">
+                    <div class="project-img-wrap">
+                        <img src="assets/real_3.png" alt="Na Khwai Village Road" class="project-card-img">
+                    </div>
                     <h5 class="project-entry-name" data-en="Na Khwai Village Road" data-la="ເສັ້ນທາງເບຕົງ ບ້ານນາຄວາຍ" data-zh="那快村混凝土路">Na Khwai Village Road</h5>
                     <p class="project-entry-detail" data-en="From the Na Khwai junction to Na Khwai Secondary School, linking Don Nok Khum and the 450-Year Road, Xaysettha district." data-la="ຈາກສາມແຍກບ້ານນາຄວາຍ ຫາ ໂຮງຮຽນມັດທະຍົມສົມບູນບ້ານນາຄວາຍ (ເຊື່ອມຕໍ່ດອນນົກຂຸ້ມ - ທາງ 450 ປີ) ເມືອງໄຊເສດຖາ." data-zh="从那快村交叉口至那快完全中学（连接洞诺坤—450周年路），赛色塔县。">From the Na Khwai junction to Na Khwai Secondary School, linking Don Nok Khum and the 450-Year Road, Xaysettha district.</p>
                     <div class="spec-chips">
@@ -446,6 +540,9 @@
                 </article>
 
                 <article class="project-entry">
+                    <div class="project-img-wrap">
+                        <img src="assets/building_construction.png" alt="Road to National Political Academy" class="project-card-img">
+                    </div>
                     <h5 class="project-entry-name" data-en="Road to National Political Academy" data-la="ເສັ້ນທາງເຂົ້າສະຖາບັນການເມືອງ ການປົກຄອງແຫ່ງຊາດ" data-zh="国家政治行政学院进院道路">Road to National Political Academy</h5>
                     <p class="project-entry-detail" data-en="From Tha Ngon village to Phou Kham village, Xaythany district." data-la="ແຕ່ບ້ານທ່າງ່ອນ ຫາ ບ້ານພູຄໍາ ເມືອງໄຊທານີ." data-zh="从塔俄村至富甘村，赛塔尼县。">From Tha Ngon village to Phou Kham village, Xaythany district.</p>
                     <div class="spec-chips">
@@ -455,6 +552,9 @@
                 </article>
 
                 <article class="project-entry">
+                    <div class="project-img-wrap">
+                        <img src="assets/road_construction.png" alt="Hadxaifong Internal Roads" class="project-card-img">
+                    </div>
                     <h5 class="project-entry-name" data-en="Hadxaifong Internal Roads" data-la="ເສັ້ນທາງເບຕົງ ເມືອງຫາດຊາຍຟອງ (ພາຍໃນ)" data-zh="哈赛丰县内部道路">Hadxaifong Internal Roads</h5>
                     <p class="project-entry-detail" data-en="From Sala Kham village through Dong Phon Lao village to Savang village." data-la="ແຕ່ບ້ານສາລາຄໍາ ຜ່ານບ້ານດົງໂພນເລົາ ຫາ ບ້ານສະຫວ່າງ." data-zh="从沙拉甘村经东蓬劳村至沙旺村。">From Sala Kham village through Dong Phon Lao village to Savang village.</p>
                     <div class="spec-chips">
@@ -464,6 +564,9 @@
                 </article>
 
                 <article class="project-entry">
+                    <div class="project-img-wrap">
+                        <img src="assets/real_6.jpg" alt="450-Year Road Connector" class="project-card-img">
+                    </div>
                     <h5 class="project-entry-name" data-en="450-Year Road Connector" data-la="ເສັ້ນທາງເບຕົງ ເຊື່ອມຕໍ່ຖະໜົນ 450 ປີ" data-zh="450周年路连接线">450-Year Road Connector</h5>
                     <p class="project-entry-detail" data-en="From the Xok Noy crossroads to Xok Yai village, Xaythany district." data-la="ຈາກສີ່ແຍກບ້ານໂຊກນ້ອຍ ຫາ ບ້ານໂຊກໃຫຍ່ ເມືອງໄຊທານີ." data-zh="从晓诺村十字路口至晓亚村，赛塔尼县。">From the Xok Noy crossroads to Xok Yai village, Xaythany district.</p>
                     <div class="spec-chips">
@@ -476,11 +579,14 @@
 
             <h4 class="portfolio-group-title">
                 <span class="group-index">02</span>
-                <span data-en="Strategic Construction · Ministry of Defense" data-la="ໂຄງການກໍ່ສ້າງອາຄານ ແລະ ສິ່ງປຸກສ້າງຍຸດທະສາດ (ກະຊວງປ້ອງກັນປະເທດ)" data-zh="战略建筑工程（国防部）">Strategic Construction · Ministry of Defense</span>
+                <span data-en="Strategic Construction · Ministry of Defense" data-la="ໂຄງການກໍ່ສ້າງອາຄານ ແລະ ສິ່ງປຸກສ້າງຍຸດທະສາດ" data-zh="战略建筑工程（国防部）">Strategic Construction · Ministry of Defense</span>
             </h4>
             <div class="project-entries">
 
                 <article class="project-entry">
+                    <div class="project-img-wrap">
+                        <img src="assets/real_7.png" alt="Thong Haihin Airport Upgrade" class="project-card-img">
+                    </div>
                     <h5 class="project-entry-name" data-en="Thong Haihin Airport Upgrade" data-la="ສ້ອມແປງ ແລະ ປັບປຸງສະໜາມບິນທົ່ງໄຫຫີນ" data-zh="石缸平原机场修缮升级">Thong Haihin Airport Upgrade</h5>
                     <p class="project-entry-detail" data-en="Repair and upgrade of Thong Haihin Airport in Xiengkhouang Province." data-la="ດຳເນີນການຍົກລະດັບສະໜາມບິນທົ່ງໄຫຫີນ ທີ່ແຂວງຊຽງຂວາງ." data-zh="对川圹省石缸平原机场进行升级改造。">Repair and upgrade of Thong Haihin Airport in Xiengkhouang Province.</p>
                     <div class="spec-chips">
@@ -489,6 +595,9 @@
                 </article>
 
                 <article class="project-entry">
+                    <div class="project-img-wrap">
+                        <img src="assets/building_construction.png" alt="Pharmaceutical &amp; Medical Equipment Factory" class="project-card-img">
+                    </div>
                     <h5 class="project-entry-name" data-en="Pharmaceutical &amp; Medical Equipment Factory" data-la="ໂຮງງານຜະລິດຢາ ແລະ ອຸປະກອນການແພດ" data-zh="制药及医疗器械工厂">Pharmaceutical &amp; Medical Equipment Factory</h5>
                     <p class="project-entry-detail" data-en="Built for the Ministry of Defense at Nong Yao village, Naxaithong district, Vientiane Capital." data-la="ກໍ່ສ້າງໃຫ້ແກ່ກະຊວງປ້ອງກັນປະເທດ ທີ່ບ້ານໜອງຍາວ ເມືອງນາຊາຍທອງ ນະຄອນຫຼວງວຽງຈັນ." data-zh="为国防部建设，位于万象市那赛通县农尧村。">Built for the Ministry of Defense at Nong Yao village, Naxaithong district, Vientiane Capital.</p>
                     <div class="spec-chips">
@@ -497,6 +606,9 @@
                 </article>
 
                 <article class="project-entry">
+                    <div class="project-img-wrap">
+                        <img src="assets/building_construction.png" alt="Garment Factory, Offices and Housing" class="project-card-img">
+                    </div>
                     <h5 class="project-entry-name" data-en="Garment Factory, Offices and Housing" data-la="ໂຮງງານຕັດຫຍິບ, ຫ້ອງການ ແລະ ທີ່ພັກ" data-zh="制衣厂、办公楼及宿舍">Garment Factory, Offices and Housing</h5>
                     <p class="project-entry-detail" data-en="Built for the Ministry of Defense at Non Sa-ard village, Xaythany district, Vientiane Capital." data-la="ກໍ່ສ້າງໃຫ້ແກ່ກະຊວງປ້ອງກັນປະເທດ ທີ່ບ້ານໂນນສະອາດ ເມືອງໄຊທານີ ນະຄອນຫຼວງວຽງຈັນ." data-zh="为国防部建设，位于万象市赛塔尼县农沙阿村。">Built for the Ministry of Defense at Non Sa-ard village, Xaythany district, Vientiane Capital.</p>
                     <div class="spec-chips">
@@ -508,10 +620,10 @@
         </div>
     </div>
 </section>
-</div>
+</section>
 
         <!-- TAB: ACTIVITY -->
-        <div class="tab-content" id="tab-activity">
+        <section class="page-section" id="activity">
         <section class="activity-section" id="activity" style="padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; position: relative; z-index: 10;">
             <div class="org-header">
                 <h2 class="section-title" data-en="Company Activity" data-la="ການເຄື່ອນໄຫວຂອງບໍລິສັດ" data-zh="公司活动">Company Activity</h2>
@@ -523,10 +635,10 @@
                 <div class="loading-state" data-en="Loading latest news..." data-la="ກຳລັງໂຫຼດຂ່າວໃໝ່ລ່າສຸດ..." data-zh="正在加载最新新闻...">Loading latest news...</div>
             </div>
         </section>
-        </div>
+        </section>
 
         <!-- TAB: CONTACT -->
-        <div class="tab-content" id="tab-contact">
+        <section class="page-section" id="contact">
 <section class="contact-section" id="contact">
             <div class="contact-grid">
                 <div class="contact-info animate-on-scroll">
@@ -585,7 +697,7 @@
                 </div>
             </div>
         </section>
-        </div>
+        </section>
     </main>
 
 
@@ -597,53 +709,6 @@
         </div>
     </footer>
 
-    <!-- Floating Dock Navigation (Bottom Dock) -->
-    <div class="dock-container">
-        <nav class="floating-dock">
-            <ul class="dock-list">
-                <li class="dock-item active" data-tab="tab-home" id="dock-home">
-                    <span class="dock-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>
-                    <span class="dock-label">
-                        <span class="en-text">Home</span>
-                        <span class="lao-text">ໜ້າຫຼັກ</span>
-                        <span class="zh-text">首页</span>
-                    </span>
-                </li>
-                <li class="dock-item" data-tab="tab-about" id="dock-about">
-                    <span class="dock-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></span>
-                    <span class="dock-label">
-                        <span class="en-text">About</span>
-                        <span class="lao-text">ກ່ຽວກັບ</span>
-                        <span class="zh-text">关于</span>
-                    </span>
-                </li>
-                <li class="dock-item" data-tab="tab-projects" id="dock-projects">
-                    <span class="dock-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/></svg></span>
-                    <span class="dock-label">
-                        <span class="en-text">Projects</span>
-                        <span class="lao-text">ໂຄງການ</span>
-                        <span class="zh-text">项目</span>
-                    </span>
-                </li>
-                <li class="dock-item" data-tab="tab-activity" id="dock-activity">
-                    <span class="dock-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8z"/></svg></span>
-                    <span class="dock-label">
-                        <span class="en-text">News</span>
-                        <span class="lao-text">ຂ່າວສານ</span>
-                        <span class="zh-text">新闻</span>
-                    </span>
-                </li>
-                <li class="dock-item" data-tab="tab-contact" id="dock-contact">
-                    <span class="dock-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
-                    <span class="dock-label">
-                        <span class="en-text">Contact</span>
-                        <span class="lao-text">ຕິດຕໍ່</span>
-                        <span class="zh-text">联系</span>
-                    </span>
-                </li>
-            </ul>
-        </nav>
-    </div>
 
     <!-- Case Study Details Modal (Slide-up modal overlays) -->
     <dialog class="project-modal" id="project-modal">

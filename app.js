@@ -7,14 +7,14 @@ let currentTheme = localStorage.getItem('psl_theme') || 'light';
 // Translations Database
 const translations = {
     heroDesc: {
-        en: "PSL Group is a 100% Lao-owned company founded in 2018. Restructured in 2025 with a registered capital of 50 Billion LAK, we specialize in major infrastructure development, government defense procurement, and advanced technological innovation.",
-        la: "ບໍລິສັດ ພີເອັດສແອວ ກໍ່ສ້າງຄົບວົງຈອນ ຈຳກັດຜູ້ດຽວ (PSL) ແມ່ນບໍລິສັດຂອງຄົນລາວ 100% ທີ່ສ້າງຕັ້ງຂຶ້ນໃນປີ 2018 ແລະ ໄດ້ປ່ຽນແປງໂຄງຮ່າງໃນປີ 2025 ເປັນ ກຸ່ມບໍລິສັດ PSL Group ດ້ວຍທຶນຈົດທະບຽນ 50 ຕື້ກີບ. ພວກເຮົາມີຄວາມຊ່ຽວຊານໃນການພັດທະນາໂຄງລ່າງພື້ນຖານ, ການຈັດຊື້-ຈັດຈ້າງໃຫ້ພາກລັດ, ແລະ ການພັດທະນາເຕັກໂນໂລຊີອັນທັນສະໄໝ.",
-        zh: "PSL集团是一家成立于2018年的100%老挝全资公司。我们在2025年进行了重组，注册资本为500亿基普。我们专注于重大基础设施开发、政府国防采购以及先进技术创新。"
+        en: "Welcome to PSL Group.<br><br>PSL Construction Complete Sole Co., Ltd. is a proud 100% Lao-invested enterprise established in 2018. With continuous growth and expansion, we upgraded our structure to become a full-fledged PSL Group in 2025. We have extensive expertise and rich experience in infrastructure development, government procurement and contracting, and advanced technology development, contributing to the sustainable development of the nation.",
+        la: "ຍິນດີຕ້ອນຮັບເຂົ້າສູ່ ກຸ່ມບໍລິສັດ ພີເອັດສແອວ (PSL Group).<br><br>ບໍລິສັດ ພີເອັດສແອວ ກໍ່ສ້າງຄົບວົງຈອນ ຈຳກັດຜູ້ດຽວ ແມ່ນຄວາມພາກພູມໃຈຂອງທຸລະກິດທີ່ລົງທຶນໂດຍຄົນລາວ 100% ເຊິ່ງໄດ້ຮັບການສ້າງຕັ້ງຂຶ້ນໃນປີ 2018. ດ້ວຍການເຕີບໃຫຍ່ ແລະ ການຂະຫຍາຍຕົວຢ່າງຕໍ່ເນື່ອງ, ພວກເຮົາໄດ້ຍົກລະດັບໂຄງສ້າງກາຍເປັນ ກຸ່ມບໍລິສັດ PSL Group ຢ່າງເຕັມຮູບແບບໃນປີ 2025. ພວກເຮົາມີຄວາມຊ່ຽວຊານ ແລະ ປະສົບການອັນອຸດົມສົມບູນ ໃນການພັດທະນາພື້ນຖານໂຄງລ່າງ, ການສະໜອງວຽກງານຈັດຊື້-ຈັດຈ້າງໃຫ້ແກ່ອົງການຈັດຕັ້ງພາກລັດ, ແລະ ການພັດທະນາເຕັກໂນໂລຊີອັນທັນສະໄໝ ເພື່ອປະກອບສ່ວນເຂົ້າໃນການສ້າງສາພັດທະນາປະເທດຊາດຢ່າງຍືນຍົງ.",
+        zh: "欢迎来到 PSL 集团。<br><br>PSL 建筑综合独资有限公司是一家引以为豪的 100% 老挝全资企业，成立于2018年。随着业务的持续增长和扩张，我们在2025年全面升级为 PSL 集团。我们在基础设施开发、政府采购与承包以及先进技术开发方面拥有丰富的专业知识和经验，致力于为国家的可持续发展做出贡献。"
     },
             visionText: {
-            en: "We have a vision to develop the company into a comprehensive construction conglomerate through cooperation with domestic and international companies. By utilizing advanced construction technologies, we aim to achieve outstanding success, build confidence and trust with project owners, and create maximum satisfaction to meet customer needs with excellent quality and impressive services under 5 key factors:",
-            la: "ພວກເຮົາມີວິໄສທັດທີ່ຈະພັດທະນາບໍລິສັດ ໃຫ້ເປັນກຸ່ມບໍລິສັດກໍ່ສ້າງຄົບວົງຈອນ ໂດຍການຮ່ວມມືກັບບັນດາບໍລິສັດພາຍໃນ ແລະ ບໍລິສັດຕ່າງປະເທດ ເພື່ອນຳໃຊ້ເຕັກໂນໂລຊີກໍ່ສ້າງຕ່າງໆ ໃຫ້ມີຜົນສຳເລັດທີ່ໂດດເດັ່ນ, ສ້າງຄວາມເຊື່ອໝັ້ນ ແລະ ໄວ້ວາງໃຈ ຂອງເຈົ້າຂອງໂຄງການ ແລະ ສ້າງຄວາມເພິ່ງພໍໃຈ ເພື່ອຕອບສະໜອງຄວາມຕ້ອງການຂອງລູກຄ້າດ້ວຍຄຸນນະພາບທີ່ດີເລີດ ແລະ ການບໍລິການທີ່ປະທັບໃຈ ພາຍໃຕ້ການປະຕິບັດ 5 ປັດໃຈສຳຄັນ ຄື:",
-            zh: "我们的愿景是通过与国内外公司合作，将公司发展成为一家综合性建筑企业集团。利用先进的建筑技术，我们旨在取得卓越的成就，建立项目业主的信心和信任，并以卓越的质量和令人印象深刻的服务创造最大的满意度，以满足客户的需求。我们的行动基于5个关键因素："
+            en: "PSL will step up to become an international leader in comprehensive infrastructure development by integrating innovation and modern technology into the construction process to create sustainable works, elevate the quality of life for society, and build trust for project owners. This is achieved through a development strategy that emphasizes the use of innovation, sustainable cooperation with domestic and international experts, and a focus on developing Lao personnel into professionals under the 5 core factors that form our commitment: transparency and honesty in every step of the work, safety standards as the highest priority, excellent quality according to international standards, architectural beauty in harmony with the environment, and strict on-time delivery for maximum customer satisfaction.",
+            la: "PSL ຈະກ້າວຂຶ້ນເປັນຜູ້ນຳດ້ານການພັດທະນາພື້ນຖານໂຄງລ່າງຄົບວົງຈອນໃນລະດັບສາກົນ ໂດຍການເຊື່ອມໂຍງນະວັດຕະກຳ ແລະ ເຕັກໂນໂລຊີທີ່ທັນສະໄໝເຂົ້າໃນຂະບວນການກໍ່ສ້າງ ເພື່ອສ້າງສັນຜົນງານທີ່ຍືນຍົງ, ຍົກລະດັບຄຸນນະພາບຊີວິດຂອງສັງຄົມ ແລະ ສ້າງຄວາມເຊື່ອໝັ້ນໃຫ້ແກ່ເຈົ້າຂອງໂຄງການ ໂດຍຜ່ານແຜນຍຸດທະສາດການພັດທະນາທີ່ເນັ້ນການນຳໃຊ້ນະວັດຕະກຳ, ການຮ່ວມມືແບບຍືນຍົງກັບຜູ້ຊ່ຽວຊານທັງພາຍໃນ ແລະ ຕ່າງປະເທດ, ພ້ອມທັງເອົາໃຈໃສ່ພັດທະນາບຸກຄະລາກອນລາວໃຫ້ເປັນມືອາຊີບ ພາຍໃຕ້ 5 ປັດໃຈຫຼັກທີ່ເປັນຄຳໝັ້ນສັນຍາຂອງພວກເຮົາ ຄື: ຄວາມຊື່ສັດໂປ່ງໃສ ໃນທຸກຂັ້ນຕອນການເຮັດວຽກ, ມາດຕະຖານຄວາມປອດໄພ ທີ່ເປັນບຸລິມະສິດສູງສຸດ, ຄຸນນະພາບທີ່ດີເລີດ ຕາມມາດຕະຖານສາກົນ, ຄວາມສວຍງາມທາງສະຖາປັດຕະຍະກຳ ທີ່ສອດຄ່ອງກັບສະພາບແວດລ້ອມ, ແລະ ການສົ່ງມອບຜົນງານຕາມກຳນົດເວລາ ຢ່າງເຄັ່ງຄັດເພື່ອຄວາມພຶງພໍໃຈສູງສຸດຂອງລູກຄ້າ.",
+            zh: "PSL 致力于成为国际全面基础设施开发的领导者，通过将创新和现代技术融入施工过程，创造可持续的工程，提升社会生活质量，并建立项目业主的信任。这通过强调利用创新的发展战略、与国内外专家的可持续合作，以及致力于将老挝人员培养为专业人才来实现。我们的承诺基于 5 个核心因素：在工作的每个环节保持透明和诚实、将安全标准作为最高优先级、符合国际标准的卓越质量、与环境和谐相处的建筑之美，以及严格按时交付以实现最大的客户满意度。"
         },
                 visionList: {
             en: `<div class="vision-glass-grid">
@@ -243,7 +243,7 @@ function updateLanguageUI() {
 
         // Update dynamic fields from JavaScript database
     const heroDesc = document.getElementById('hero-desc');
-    if (heroDesc) heroDesc.textContent = translations.heroDesc[currentLang];
+    if (heroDesc) heroDesc.innerHTML = translations.heroDesc[currentLang];
 
     const visText = document.getElementById('vision-text');
     if (visText) visText.textContent = translations.visionText[currentLang];
@@ -283,41 +283,29 @@ function updateLanguageUI() {
     }
 }
 
-// Category Filtering logic using Bottom Floating Dock
+// Smooth Scrolling for Dock Navigation
 function initFilter() {
     const dockItems = document.querySelectorAll('.dock-item');
-    const tabContents = document.querySelectorAll('.tab-content');
 
     dockItems.forEach(item => {
         item.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            const targetTabId = item.getAttribute('data-tab');
-            if (!targetTabId) return;
-
-            // Set active class on clicked dock item
-            dockItems.forEach(di => di.classList.remove('active'));
-            item.classList.add('active');
-
-            // Show target tab, hide others
-            tabContents.forEach(tab => {
-                if (tab.id === targetTabId) {
-                    tab.classList.add('active');
+            const targetId = item.getAttribute('href');
+            if (targetId && targetId.startsWith('#')) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault(); // Prevent instant jump
                     
-                    // Force animations inside this tab to trigger since they were hidden
-                    const animated = tab.querySelectorAll('.animate-on-scroll');
-                    animated.forEach(el => {
-                        el.classList.add('appear');
-                        el.style.opacity = '1';
-                        el.style.transform = 'translateY(0)';
-                    });
-                } else {
-                    tab.classList.remove('active');
+                    // Smooth scroll to target section
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    
+                    // Update active class immediately for better UX
+                    dockItems.forEach(di => di.classList.remove('active'));
+                    item.classList.add('active');
+                } else if (targetId === '#home' || targetId === '#') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
-            });
-            
-            // Scroll to top safely
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         });
     });
 }
@@ -477,7 +465,7 @@ async function fetchAndRenderActivities() {
             const photoLayer = act.photoUrl
                 ? `<img src="${act.photoUrl}" alt="Activity Photo" class="activity-img-photo" loading="lazy" onerror="this.remove()">`
                 : '';
-            const imgHtml = `<div class="activity-img"><img src="assets/logo.svg" alt="" class="activity-img-logo" aria-hidden="true">${photoLayer}</div>`;
+            const imgHtml = `<div class="activity-img"><img src="assets/logo_transparent.png" alt="" class="activity-img-logo" aria-hidden="true">${photoLayer}</div>`;
 
             html += `
                 <div class="activity-card">
@@ -507,3 +495,79 @@ async function fetchAndRenderActivities() {
         feedContainer.innerHTML = `<p style="text-align:center; color:var(--text-muted); grid-column: 1/-1;">Unable to load activities right now.</p>`;
     }
 }
+
+    // ==========================================================================
+    // Scroll Spy & Premium Reveal Animations
+    // ==========================================================================
+
+    const sections = document.querySelectorAll('.page-section');
+    const dockItems = document.querySelectorAll('.dock-item');
+
+    // Scroll Spy to highlight dock icons
+    const observerOptions = {
+        root: null,
+        rootMargin: '-30% 0px -70% 0px', // Trigger when section is in top 30% of viewport
+        threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Remove active from all
+                dockItems.forEach(item => item.classList.remove('active'));
+                
+                // Add active to corresponding dock item
+                const id = entry.target.getAttribute('id');
+                const correspondingDock = document.querySelector(`.dock-item[href="#${id}"]`);
+                if (correspondingDock) {
+                    correspondingDock.classList.add('active');
+                }
+                
+                // Trigger any animations inside this section
+                const animatedElements = entry.target.querySelectorAll('.animate-on-scroll:not(.animated)');
+                animatedElements.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0) scale(1)';
+                        el.classList.add('animated');
+                    }, index * 100);
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+
+    // Smooth scroll for dock items
+    dockItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = item.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Auto-hide bottom dock on scroll down
+    let lastScrollY = window.scrollY;
+    const dockContainer = document.querySelector('.dock-container');
+    
+    window.addEventListener('scroll', () => {
+        if (!dockContainer) return;
+        const currentScrollY = window.scrollY;
+        
+        // Hide dock if scrolling down and not near top
+        if (currentScrollY > lastScrollY && currentScrollY > 150) {
+            dockContainer.classList.add('dock-hidden');
+        } else {
+            // Show dock if scrolling up
+            dockContainer.classList.remove('dock-hidden');
+        }
+        lastScrollY = currentScrollY;
+    }, { passive: true });
