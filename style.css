@@ -3762,3 +3762,68 @@ a.dock-item {
 .glass-icon {
     font-size: 1.25rem !important;
 }
+
+/* ==========================================================================
+   MOBILE "FIT ONE SCREEN" OPTIMIZATIONS
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Compress the Hero Section drastically to fit on one screen */
+    .hero-section {
+        padding: 5rem 0 2rem 0 !important; /* Smaller top and bottom padding */
+    }
+    .hero-grid {
+        gap: 1rem !important; /* Reduce gap between intro and contact card */
+    }
+    
+    /* Shrink the title to fit nicely */
+    .hero-title {
+        font-size: 1.8rem !important;
+        margin-bottom: 0.75rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    /* Condense the paragraphs */
+    .vision-paragraph {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    /* 5 Pillars: allow swiping on mobile to save massive vertical space */
+    .vision-glass-grid {
+        margin-top: 1rem !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important; /* Smooth scrolling on iOS */
+        scrollbar-width: none !important; /* Hide scrollbar Firefox */
+        padding-bottom: 0.5rem !important;
+    }
+    .vision-glass-grid::-webkit-scrollbar {
+        display: none !important; /* Hide scrollbar Chrome/Safari */
+    }
+    .vision-glass-card {
+        flex: 0 0 140px !important; /* Fixed width so they can be swiped horizontally */
+        height: auto !important;
+    }
+    
+    /* Shrink Contact Card container */
+    .hero-meta {
+        margin-top: 0.5rem !important;
+        padding: 1rem !important;
+    }
+    .meta-item {
+        padding-bottom: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    .meta-item:last-child {
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .meta-value {
+        font-size: 0.8rem !important;
+    }
+    .meta-icon {
+        font-size: 1rem !important;
+        width: 30px !important;
+        height: 30px !important;
+    }
+}
