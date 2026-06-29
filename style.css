@@ -340,11 +340,54 @@ html[lang="zh"] .lang-btn-option[data-lang="zh"] {
 }
 
 .hero-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: space-between;
     align-items: flex-start;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
+
+.hero-intro {
+    width: 65%;
+}
+
+.hero-pillars-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    flex-wrap: nowrap;
+}
+
+.hero-pillars-row .glass-orb {
+    position: static;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    transform: none;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+    padding: 1.5rem 1rem;
+    cursor: default;
+}
+.hero-pillars-row .glass-orb:hover {
+    transform: translateY(-5px) !important;
+}
+.hero-pillars-row .orb-text {
+    opacity: 1;
+    transform: none;
+    position: relative;
+    bottom: 0;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+}
+.hero-pillars-row .orb-icon {
+    font-size: 2rem;
+    margin-bottom: 0;
+    transform: none !important;
+}
+
 
 .hero-title {
     font-size: 4rem;
