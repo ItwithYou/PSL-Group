@@ -471,11 +471,17 @@ async function fetchAndRenderActivities() {
         let html = '';
         activities.forEach(act => {
             const dateStr = new Date(act.date).toLocaleDateString();
-            const imgHtml = act.photoUrl ? `<img src="${act.photoUrl}" alt="Activity Photo" loading="lazy">` : '';
-            
+            // Always show a branded placeholder; layer the real photo on top.
+            // If the photo is missing or fails to load, it is removed and the
+            // placeholder shows through (no broken-image icons).
+            const photoLayer = act.photoUrl
+                ? `<img src="${act.photoUrl}" alt="Activity Photo" class="activity-img-photo" loading="lazy" onerror="this.remove()">`
+                : '';
+            const imgHtml = `<div class="activity-img"><img src="assets/logo.svg" alt="" class="activity-img-logo" aria-hidden="true">${photoLayer}</div>`;
+
             html += `
                 <div class="activity-card">
-                    ${imgHtml ? `<div class="activity-img">${imgHtml}</div>` : ''}
+                    ${imgHtml}
                     <div class="activity-content">
                         <span class="activity-date">${dateStr}</span>
                         <h3 class="activity-title">

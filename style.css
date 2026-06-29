@@ -139,10 +139,11 @@ html[lang="zh"] .lao-text {
 }
 
 .header-container {
+    position: relative;
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -154,7 +155,13 @@ html[lang="zh"] .lao-text {
     font-weight: 700;
     font-size: 1.4rem;
     letter-spacing: -0.03em;
-    gap: 0.5rem;
+    gap: 0.7rem;
+}
+
+.brand-logo-img {
+    height: 44px;
+    width: auto;
+    display: block;
 }
 
 .logo-dot {
@@ -166,6 +173,10 @@ html[lang="zh"] .lao-text {
 }
 
 .header-controls {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -1193,6 +1204,73 @@ textarea.form-input {
     margin-top: 0;
 }
 
+/* ---------------------------------------------------------------------------
+   About / Company Overview
+   --------------------------------------------------------------------------- */
+.about-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem 2rem;
+}
+
+.about-lead {
+    max-width: 900px;
+    margin: 2rem auto 0;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+.about-pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.about-pillar {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem 1.75rem;
+    transition: var(--transition-quick);
+}
+
+.about-pillar:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+.about-pillar-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    border-radius: 14px;
+    background-color: var(--border-light);
+    margin-bottom: 1.25rem;
+}
+
+.about-pillar h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 1.35;
+    margin-bottom: 0.75rem;
+}
+
+.about-pillar p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    font-weight: 300;
+}
+
 /* Animations */
 @keyframes slideUp {
     from {
@@ -1391,6 +1469,24 @@ textarea.form-input {
         right: 1rem;
         width: 38px;
         height: 38px;
+    }
+}
+
+@media (max-width: 640px) {
+    /* Keep the centered logo from colliding with the controls on phones */
+    .header-container {
+        justify-content: flex-start;
+    }
+    .header-controls {
+        position: static;
+        transform: none;
+        margin-left: auto;
+    }
+    .brand-logo-img {
+        height: 36px;
+    }
+    .brand-logo .logo-text {
+        display: none;
     }
 }
 
@@ -1660,9 +1756,29 @@ textarea.form-input {
     border-color: var(--accent-color);
 }
 
-.activity-img img {
-    width: 100%;
+.activity-img {
+    position: relative;
     height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--border-light), var(--card-bg));
+}
+
+/* Branded placeholder logo shown when there is no photo (or it fails to load) */
+.activity-img-logo {
+    width: 110px;
+    height: auto;
+    opacity: 0.5;
+}
+
+/* Real photo layered on top, covering the placeholder */
+.activity-img-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
