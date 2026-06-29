@@ -41,11 +41,14 @@ Posting through the admin panel writes to `data.json` and saves photos to an
 
 ## Deployment (GitHub Pages)
 
-This repo deploys automatically to **GitHub Pages** via
-`.github/workflows/deploy.yml` on every push to `main`.
+The site is published with **GitHub Pages** serving the static files
+directly from the `main` branch.
 
-One-time setup: in the GitHub repo, go to **Settings → Pages** and set
-**Build and deployment → Source** to **GitHub Actions**.
+Setup (in the GitHub repo): **Settings → Pages → Build and deployment**,
+set **Source** to **Deploy from a branch**, choose branch **`main`** and
+folder **`/ (root)`**, then **Save**. Every push to `main` re-publishes
+the site automatically. The live URL is
+<https://itwithyou.github.io/PSL-Group/>.
 
 The published site serves the static files and reads news from `data.json`.
 The live API (admin posting/uploads) only runs when you start `server.js`
