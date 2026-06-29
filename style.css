@@ -174,17 +174,21 @@ html[lang="zh"] .lao-text {
 }
 
 .header-container.scrolled {
-    background: rgba(250, 250, 250, 0.85);
+    background: var(--bg-color);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     padding: 0.75rem 2rem;
     border-radius: 0 0 16px 16px;
 }
 
 [data-theme="dark"] .header-container.scrolled {
-    background: rgba(15, 15, 20, 0.85);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    background: var(--bg-color);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 0.75rem 2rem;
+    border-radius: 0 0 16px 16px;
 }
 
 .brand-logo {
@@ -2136,13 +2140,22 @@ textarea.form-input {
 .vision-glass-grid {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
     margin-top: 2rem;
-    width: 100%;
+    width: 100vw;
+    margin-left: -2rem;
+    padding: 0 2rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.vision-glass-grid::-webkit-scrollbar {
+    display: none;
 }
 
 .vision-glass-card {
+    flex: 0 0 auto;
+    white-space: nowrap;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -2163,6 +2176,8 @@ textarea.form-input {
     background: rgba(255, 255, 255, 0.2) !important;
 }
 [data-theme="light"] .vision-glass-card {
+    flex: 0 0 auto;
+    white-space: nowrap;
     background: rgba(255, 255, 255, 0.8) !important;
     border: 1px solid rgba(0, 0, 0, 0.05) !important;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
@@ -2172,6 +2187,8 @@ textarea.form-input {
 }
 
 [data-theme="light"] .vision-glass-card {
+    flex: 0 0 auto;
+    white-space: nowrap;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -2192,6 +2209,8 @@ textarea.form-input {
     background: rgba(255, 255, 255, 0.2) !important;
 }
 [data-theme="light"] .vision-glass-card {
+    flex: 0 0 auto;
+    white-space: nowrap;
     background: rgba(255, 255, 255, 0.8) !important;
     border: 1px solid rgba(0, 0, 0, 0.05) !important;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
@@ -2235,6 +2254,8 @@ textarea.form-input {
 
 @media (max-width: 600px) {
     .vision-glass-card {
+    flex: 0 0 auto;
+    white-space: nowrap;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -2255,6 +2276,8 @@ textarea.form-input {
     background: rgba(255, 255, 255, 0.2) !important;
 }
 [data-theme="light"] .vision-glass-card {
+    flex: 0 0 auto;
+    white-space: nowrap;
     background: rgba(255, 255, 255, 0.8) !important;
     border: 1px solid rgba(0, 0, 0, 0.05) !important;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
@@ -2373,7 +2396,7 @@ textarea.form-input {
 .roadmap-card {
     position: absolute;
     width: 300px;
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--card-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(197, 160, 89, 0.4);
