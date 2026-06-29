@@ -2269,7 +2269,7 @@ textarea.form-input {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 12rem 2rem;
+    padding: 24rem 2rem; /* Double the padding to fit the cards */
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -2294,6 +2294,25 @@ textarea.form-input {
 @keyframes drawLine {
     to { width: calc(100% - 4rem); }
 }
+
+.roadmap-path-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    width: 16px;
+    height: 16px;
+    border-top: 3px solid var(--accent-color);
+    border-right: 3px solid var(--accent-color);
+    transform: translateY(-50%) rotate(45deg);
+    opacity: 0;
+    animation: fadeInArrow 0.5s ease-out forwards 1.3s;
+}
+
+@keyframes fadeInArrow {
+    to { opacity: 1; }
+}
+
 
 .roadmap-stop {
     position: relative;
@@ -2348,9 +2367,9 @@ textarea.form-input {
 }
 
 /* Precise Staggered Zig-Zag Layout */
-.roadmap-stop:nth-child(1) .roadmap-card { bottom: 40px; animation-delay: 0.5s; }
-.roadmap-stop:nth-child(2) .roadmap-card { top: 40px; animation-delay: 0.8s; }
-.roadmap-stop:nth-child(3) .roadmap-card { bottom: 40px; animation-delay: 1.1s; }
+.roadmap-stop:nth-child(1) .roadmap-card { bottom: 25px; animation-delay: 0.5s; }
+.roadmap-stop:nth-child(2) .roadmap-card { top: 25px; animation-delay: 0.8s; }
+.roadmap-stop:nth-child(3) .roadmap-card { bottom: 25px; animation-delay: 1.1s; }
 
 /* Connecting Vertical Lines */
 .roadmap-stop:nth-child(1)::before,
@@ -2360,7 +2379,7 @@ textarea.form-input {
     bottom: 10px;
     left: 50%;
     width: 2px;
-    height: 30px;
+    height: 15px;
     background: linear-gradient(to top, var(--accent-color), transparent);
     transform: translateX(-50%);
     opacity: 0;
@@ -2374,7 +2393,7 @@ textarea.form-input {
     top: 10px;
     left: 50%;
     width: 2px;
-    height: 30px;
+    height: 15px;
     background: linear-gradient(to bottom, var(--accent-color), transparent);
     transform: translateX(-50%);
     opacity: 0;
@@ -2417,7 +2436,7 @@ textarea.form-input {
 
 @media (max-width: 900px) {
     .roadmap-path-container {
-        padding: 14rem 2rem;
+        padding: 24rem 2rem;
         overflow-x: auto;
         justify-content: flex-start;
         gap: 2rem;
@@ -2520,7 +2539,7 @@ textarea.form-input {
 }
 
 .org-v-line.short {
-    height: 30px;
+    height: 15px;
 }
 
 .org-h-split {
@@ -2558,7 +2577,7 @@ textarea.form-input {
     position: absolute;
     left: 20px;
     top: 0;
-    bottom: 40px; /* stops before the last item's center */
+    bottom: 25px; /* stops before the last item's center */
     width: 2px;
     background-color: #c29d5b;
     z-index: 1;
