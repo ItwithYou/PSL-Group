@@ -430,25 +430,45 @@ html[lang="zh"] .lang-btn-option[data-lang="zh"] {
 }
 
 .hero-meta {
-    width: 30%;
-    min-width: 280px;
-    max-width: 350px;
-    background: var(--card-bg); /* Use theme card bg instead of transparent blur */
-    border: 1px solid var(--border-color);
-    border-top: 3px solid var(--accent-color); /* Classic premium gold top line */
-    border-radius: 8px; /* Slightly sharper edges for a classic look */
-    padding: 2rem 1.5rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Very soft shadow */
+    width: 32%;
+    min-width: 300px;
+    max-width: 380px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    border-top: 4px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    box-shadow: 
+        0 25px 50px rgba(10, 37, 64, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.8);
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-meta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.1) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
 }
 
 [data-theme="dark"] .hero-meta {
-    background: #111820; /* Very deep, classic dark grey/navy */
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-top: 3px solid var(--accent-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, rgba(17, 24, 32, 0.8) 0%, rgba(10, 15, 20, 0.9) 100%);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    border-top: 4px solid var(--accent-color);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.6),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 .hero-meta .meta-item {
@@ -3070,11 +3090,11 @@ body {
 }
 
 .page-section {
-    padding: 40px 0;
+    padding: 20px 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 #home {
