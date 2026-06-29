@@ -82,6 +82,10 @@ html {
 }
 
 body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-color);
     font-family: var(--font-primary);
     line-height: 1.6;
     overflow-x: hidden;
@@ -1167,6 +1171,10 @@ textarea.form-input {
 }
 
 .modal-body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-color);
     padding: 5rem 4rem;
     overflow-y: auto;
     display: flex;
@@ -1530,6 +1538,10 @@ textarea.form-input {
         font-size: 3.5rem;
     }
     .modal-body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-color);
         padding: 4rem 2.5rem;
     }
 }
@@ -1594,6 +1606,10 @@ textarea.form-input {
         height: 250px;
     }
     .modal-body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-color);
         padding: 3rem 2rem;
     }
     .modal-wrapper {
@@ -1606,6 +1622,10 @@ textarea.form-input {
 
 @media (max-width: 768px) {
     body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-color);
         padding-bottom: 7.5rem;
     }
     .header {
@@ -1677,6 +1697,10 @@ textarea.form-input {
         height: 200px;
     }
     .modal-body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-color);
         padding: 2.5rem 1.5rem;
         gap: 1.75rem;
     }
@@ -2952,6 +2976,10 @@ html {
 }
 
 body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-color);
     position: relative;
     background-color: var(--bg-primary);
 }
@@ -3147,6 +3175,10 @@ html {
 }
 
 body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-color);
     position: relative;
     background-color: var(--bg-primary);
 }
@@ -3281,12 +3313,20 @@ a.dock-item {
 }
 
 .modal-body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
 }
 
 @media (min-width: 768px) {
-    .modal-body { flex-direction: row; }
+    .modal-body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-color); flex-direction: row; }
 }
 
 .modal-img-container {
