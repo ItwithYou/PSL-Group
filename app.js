@@ -188,6 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initFilter();
     initModals();
     initScrollAnimations();
+    initCompanyInfoPopup();
 
     // -----------------------------------------------------------------------------
     // Sticky Header Morphing
@@ -327,6 +328,35 @@ function initFilter() {
         });
     });
 }
+// Company Info popup (mobile): button opens the contact details in a modal
+function initCompanyInfoPopup() {
+    const trigger = document.getElementById('company-info-trigger');
+    const modal = document.getElementById('company-info-modal');
+    const body = document.getElementById('company-info-body');
+    const source = document.querySelector('.hero-meta');
+    if (!trigger || !modal || !body || !source) return;
+
+    const open = () => {
+        // Clone the live info card content so it stays in one place
+        body.innerHTML = source.innerHTML;
+        if (typeof updateLanguageUI === 'function') updateLanguageUI();
+        modal.hidden = false;
+        requestAnimationFrame(() => modal.classList.add('open'));
+        document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+        setTimeout(() => { modal.hidden = true; }, 250);
+    };
+
+    trigger.addEventListener('click', open);
+    modal.querySelectorAll('[data-info-close]').forEach(el => el.addEventListener('click', close));
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.hidden) close();
+    });
+}
+
 // Interactive Project Details Dialog
 function initModals() {
     const modal = document.getElementById('project-modal');
