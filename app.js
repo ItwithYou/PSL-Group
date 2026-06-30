@@ -2,7 +2,8 @@
 
 // Global State
 let currentLang = localStorage.getItem('psl_lang') || 'la';
-let currentTheme = localStorage.getItem('psl_theme') || 'light';
+// Key + default must match the anti-FOUC script in index.html ('theme' / 'tiffany')
+let currentTheme = localStorage.getItem('theme') || 'tiffany';
 
 // Translations Database
 const translations = {
@@ -217,7 +218,7 @@ function initTheme() {
             currentTheme = 'light';
         }
         document.documentElement.setAttribute('data-theme', currentTheme);
-        localStorage.setItem('psl_theme', currentTheme);
+        localStorage.setItem('theme', currentTheme);
     });
 }
 

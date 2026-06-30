@@ -3985,3 +3985,115 @@ html, body {
         min-width: 320px !important;
     }
 }
+
+/* ==========================================================================
+   CLEAN MODERN MOBILE HERO & INFO CARD (2026 refresh)
+   Overrides the cramped side-by-side hero with a stacked, readable layout.
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 4.5rem 0 1.5rem 0 !important;
+    }
+    /* Stack: intro on top, info card full-width below */
+    .hero-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 1.5rem !important;
+    }
+    .hero-intro,
+    .hero-meta {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+    .hero-title {
+        font-size: 2.1rem !important;
+        line-height: 1.15 !important;
+        margin-bottom: 0.85rem !important;
+    }
+    .hero-description {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    /* The contact info as one clean, premium card */
+    .hero-meta {
+        background: var(--card-bg) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 18px !important;
+        padding: 0.5rem 1.25rem !important;
+        margin-top: 0 !important;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06) !important;
+    }
+    .hero-meta .meta-item,
+    .meta-item {
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 0.85rem !important;
+        padding: 0.9rem 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        border-bottom: 1px solid var(--border-light) !important;
+    }
+    .hero-meta .meta-item:last-child,
+    .meta-item:last-child {
+        border-bottom: none !important;
+        padding-bottom: 0.4rem !important;
+    }
+    .meta-icon-box {
+        width: 40px !important;
+        height: 40px !important;
+        flex-shrink: 0 !important;
+        margin-bottom: 0 !important;
+        border-radius: 12px !important;
+    }
+    .meta-icon-box svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+    .meta-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.15rem !important;
+        min-width: 0 !important;
+    }
+    .meta-label {
+        font-size: 0.62rem !important;
+        letter-spacing: 0.08em !important;
+        margin-bottom: 0 !important;
+    }
+    .meta-value {
+        font-size: 0.9rem !important;
+        line-height: 1.35 !important;
+        word-break: break-word !important;
+    }
+    .contact-links-group {
+        gap: 0.05rem !important;
+    }
+
+    /* News feed: single full-width column that fits the phone (was clipping) */
+    .activity-section {
+        padding: 4rem 1.25rem !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    .activity-feed-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+        width: 100% !important;
+    }
+    .activity-card {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Keep all card grids to one tidy column on phones */
+    .about-pillars,
+    .project-entries,
+    .tier-grid,
+    .highway-list {
+        grid-template-columns: 1fr !important;
+    }
+}
