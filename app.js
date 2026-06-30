@@ -671,27 +671,56 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightbox = document.getElementById('lightbox');
     if (!lightbox) return;
     const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = document.querySelector('.lightbox-close');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
 
-    // Add click to all project images
-    document.querySelectorAll('.project-card-img').forEach(img => {
-        img.style.cursor = 'pointer';
-        // Add click listener to the whole card for better UX, or just image
-        img.addEventListener('click', (e) => {
-            e.stopPropagation(); // prevent card click if we had one
-            lightbox.style.display = 'block';
-            lightboxImg.src = img.src;
-        });
-    });
+    // On a fixed-width (zoomed) viewport, a position:fixed overlay is sized to the
+    // full layout viewport, so its centered image can land outside the visible
+    // slice. Pin the overlay to the visual viewport so it always covers what the
+    // user actually sees.
+    const syncToVisualViewport = () => {
+        const vv = window.visualViewport;
+        if (!vv) return;
+        lightbox.style.width = vv.width + 'px';
+        lightbox.style.height = vv.height + 'px';
+        lightbox.style.left = vv.offsetLeft + 'px';
+        lightbox.style.top = vv.offsetTop + 'px';
+    };
 
-    // Close logic
-    closeBtn.addEventListener('click', () => {
-        lightbox.style.display = 'none';
-    });
-    lightbox.addEventListener('click', (e) => {
-        if (e.target !== lightboxImg) {
-            lightbox.style.display = 'none';
+    const openLightbox = (src, alt) => {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || 'Fullscreen image';
+        syncToVisualViewport();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        if (window.visualViewport) {
+            window.visualViewport.addEventListener('resize', syncToVisualViewport);
+            window.visualViewport.addEventListener('scroll', syncToVisualViewport);
         }
+    };
+    const closeLightbox = () => {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        if (window.visualViewport) {
+            window.visualViewport.removeEventListener('resize', syncToVisualViewport);
+            window.visualViewport.removeEventListener('scroll', syncToVisualViewport);
+        }
+    };
+
+    // Delegate clicks so project photos AND dynamically-loaded news photos work
+    document.addEventListener('click', (e) => {
+        const img = e.target.closest('.project-card-img, .activity-img-photo');
+        if (img && img.src) {
+            e.stopPropagation();
+            openLightbox(img.src, img.alt);
+        }
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target !== lightboxImg) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
     });
 });
 
