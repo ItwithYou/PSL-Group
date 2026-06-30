@@ -4536,3 +4536,207 @@ html, body {
     font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--accent-color); font-weight: 600;
 }
+
+/* ==========================================================================
+   PREMIUM 2026 POLISH · clean glassmorphism, soft light on dark, smooth iOS
+   --------------------------------------------------------------------------
+   Subtle, not heavy. Frosted-glass surfaces, glowing icon orbs, gentle light
+   blooms in the dark areas, refined headings, and responsive tap feedback.
+   ========================================================================== */
+
+/* --- design tokens: glass + glow, tuned per theme --- */
+:root {
+    --glass-surface: linear-gradient(155deg, rgba(255,255,255,0.78), rgba(255,255,255,0.42));
+    --glass-border: rgba(255,255,255,0.75);
+    --glass-top-light: rgba(255,255,255,0.95);
+    --glass-shadow: 0 22px 45px -18px rgba(10,37,64,0.22);
+    --orb-surface: linear-gradient(150deg, color-mix(in srgb, var(--accent-color) 22%, transparent), color-mix(in srgb, var(--accent-color) 6%, transparent));
+    --orb-glow: 0 8px 22px -6px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    --bloom: color-mix(in srgb, var(--accent-color) 16%, transparent);
+}
+[data-theme="dark"] {
+    --glass-surface: linear-gradient(155deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+    --glass-border: rgba(255,255,255,0.10);
+    --glass-top-light: rgba(255,255,255,0.22);
+    --glass-shadow: 0 26px 55px -20px rgba(0,0,0,0.65);
+    --bloom: color-mix(in srgb, var(--accent-color) 18%, transparent);
+}
+[data-theme="tiffany"] {
+    --glass-surface: linear-gradient(155deg, rgba(10,186,181,0.10), rgba(255,255,255,0.02));
+    --glass-border: rgba(10,186,181,0.20);
+    --glass-top-light: rgba(120,232,227,0.40);
+    --glass-shadow: 0 26px 55px -20px rgba(0,0,0,0.6);
+    --orb-glow: 0 8px 26px -6px color-mix(in srgb, var(--accent-color) 55%, transparent);
+    --bloom: color-mix(in srgb, var(--accent-color) 22%, transparent);
+}
+
+/* --- frosted glass cards: refined surface, top light edge, ambient depth --- */
+.about-pillar,
+.activity-card,
+.contact-card {
+    background: var(--card-bg);
+    background-image: var(--glass-surface);
+    background-blend-mode: overlay;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    position: relative;
+    transition: transform 0.5s cubic-bezier(0.16,1,0.3,1),
+                box-shadow 0.5s cubic-bezier(0.16,1,0.3,1),
+                border-color 0.5s ease;
+}
+/* hairline of light along the top edge — the "glass" catch-light */
+.about-pillar::before,
+.activity-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--glass-top-light), transparent);
+    opacity: 0.8;
+    pointer-events: none;
+}
+.about-pillar:hover,
+.activity-card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent-color) 55%, var(--glass-border));
+    box-shadow: var(--glass-shadow), 0 0 0 1px color-mix(in srgb, var(--accent-color) 20%, transparent),
+                0 18px 50px -20px var(--bloom);
+}
+
+/* project cards: same premium glass + soft accent glow on hover */
+.project-entry {
+    box-shadow: var(--glass-shadow);
+    transition: transform 0.5s cubic-bezier(0.16,1,0.3,1),
+                box-shadow 0.5s cubic-bezier(0.16,1,0.3,1),
+                border-color 0.5s ease;
+}
+.project-entry:hover,
+[data-theme="dark"] .project-entry:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent-color) 55%, var(--border-color));
+    box-shadow: var(--glass-shadow), 0 20px 55px -22px var(--bloom);
+}
+/* gentle gradient veil over photos so titles & glow read cleanly */
+.project-img-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.18));
+    pointer-events: none;
+}
+
+/* --- premium glowing icon orbs (frosted glass + light ring) --- */
+.about-pillar-icon,
+.hero-meta .meta-icon-box {
+    background: var(--orb-surface) !important;
+    color: var(--accent-color);
+    border: 1px solid color-mix(in srgb, var(--accent-color) 35%, transparent);
+    box-shadow: var(--orb-glow),
+                inset 0 1px 1px rgba(255,255,255,0.35);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), box-shadow 0.45s ease;
+}
+/* inner top sheen */
+.about-pillar-icon::after,
+.hero-meta .meta-icon-box::after {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -10%;
+    width: 70%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(255,255,255,0.45), transparent 70%);
+    pointer-events: none;
+}
+.about-pillar:hover .about-pillar-icon {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 12px 30px -6px color-mix(in srgb, var(--accent-color) 60%, transparent),
+                inset 0 1px 1px rgba(255,255,255,0.4);
+}
+
+/* --- section heading kicker: glowing accent pill with a live dot --- */
+.sub-heading {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin-bottom: 0.9rem;
+}
+.sub-heading::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-color) 18%, transparent),
+                0 0 12px color-mix(in srgb, var(--accent-color) 70%, transparent);
+}
+
+/* refined section titles — a touch of glow lifts them off the dark canvas */
+[data-theme="dark"] .section-title,
+[data-theme="tiffany"] .section-title,
+[data-theme="dark"] .hero-title,
+[data-theme="tiffany"] .hero-title {
+    text-shadow: 0 1px 30px color-mix(in srgb, var(--accent-color) 12%, transparent);
+}
+
+/* --- soft light blooms in the dark areas (localized, gentle) --- */
+[data-theme="dark"] .page-section,
+[data-theme="tiffany"] .page-section {
+    position: relative;
+}
+[data-theme="dark"] .page-section > *,
+[data-theme="tiffany"] .page-section > * {
+    position: relative;
+    z-index: 1;
+}
+[data-theme="dark"] #home::before,
+[data-theme="tiffany"] #home::before,
+[data-theme="dark"] #about::before,
+[data-theme="tiffany"] #about::before,
+[data-theme="dark"] #projects::before,
+[data-theme="tiffany"] #projects::before {
+    content: "";
+    position: absolute;
+    top: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 320px;
+    background: radial-gradient(ellipse at center, var(--bloom), transparent 70%);
+    filter: blur(20px);
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* --- smooth, tactile feedback for touch (iOS) --- */
+a, button, .dock-item, .theme-toggle, .lang-btn-option,
+.about-pillar, .project-entry, .activity-card, .sub-chip {
+    -webkit-tap-highlight-color: transparent;
+}
+@media (hover: none) {
+    button:active, .dock-item:active, .theme-toggle:active,
+    .lang-btn-option:active, .submit-btn:active,
+    .project-card-img:active, .activity-img-photo:active {
+        transform: scale(0.96);
+        transition: transform 0.12s ease;
+    }
+}
+
+/* honour reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
