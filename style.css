@@ -1,5 +1,24 @@
 /* Custom CSS Design system for PSL Group */
 
+/* ==========================================================================
+   Phetsarath OT — the official Lao typeface (self-hosted, always available)
+   Ministry of Posts and Telecommunications, Laos · SIL OFL
+   ========================================================================== */
+@font-face {
+    font-family: 'Phetsarath OT';
+    src: url('assets/Phetsarath-Regular.ttf') format('truetype');
+    font-weight: 400 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Phetsarath OT';
+    src: url('assets/Phetsarath-Bold.ttf') format('truetype');
+    font-weight: 600 800;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     /* Color Palette - Light Theme (Phongsupthavy Corporate) */
     --bg-color: #F8F9FA;
@@ -19,7 +38,7 @@
     --success-text: #2e7d32;
     
     /* Typography & Spacing */
-    --font-primary: 'Plus Jakarta Sans', 'Noto Sans Lao', 'Inter', sans-serif;
+    --font-primary: 'Plus Jakarta Sans', 'Phetsarath OT', 'Noto Sans Lao', 'Inter', sans-serif;
     --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-quick: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -4774,7 +4793,7 @@ a, button, .dock-item, .theme-toggle, .lang-btn-option,
     --glass-shadow: var(--soft-shadow);
     /* fine accent hairline along the top inner edge — the "framed art" detail */
     --card-frame: inset 0 1.5px 0 color-mix(in srgb, var(--accent-color) 32%, transparent);
-    --font-display: 'Playfair Display', 'Noto Serif Lao', Georgia, 'Times New Roman', serif;
+    --font-display: 'Playfair Display', 'Phetsarath OT', 'Noto Serif Lao', Georgia, serif;
 }
 [data-theme="dark"] {
     --soft-shadow: 0 1px 2px rgba(0,0,0,0.30),
