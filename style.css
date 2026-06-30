@@ -19,7 +19,7 @@
     --success-text: #2e7d32;
     
     /* Typography & Spacing */
-    --font-primary: 'Inter', 'Montserrat', 'Noto Sans Lao', sans-serif;
+    --font-primary: 'Plus Jakarta Sans', 'Noto Sans Lao', 'Inter', sans-serif;
     --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-quick: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -89,10 +89,17 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--bg-color);
     font-family: var(--font-primary);
-    line-height: 1.6;
+    line-height: 1.65;
+    font-weight: 400;
+    letter-spacing: 0.002em;
     overflow-x: hidden;
     padding-bottom: 6rem; /* Space for the bottom dock */
 }
+
+/* Lao has stacked vowels/tone marks — give it extra leading for clarity */
+html[lang="la"] body,
+html[lang="la"] p,
+html[lang="la"] li { line-height: 1.85; }
 
 /* Buttons/links respond instantly to taps (no 300ms delay) */
 a, button, .dock-item, .project-entry, .about-pillar, .activity-card,
@@ -448,7 +455,7 @@ html[lang="zh"] .lang-btn-option[data-lang="zh"] img {
     font-size: 1.25rem;
     line-height: 1.7;
     color: var(--text-muted);
-    font-weight: 300;
+    font-weight: 400;
     max-width: 680px;
 }
 
@@ -694,7 +701,7 @@ html[lang="zh"] .lang-btn-option[data-lang="zh"] img {
 .card-caption {
     font-size: 0.95rem;
     color: var(--text-muted);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.5;
 }
 
@@ -711,7 +718,7 @@ html[lang="zh"] .lang-btn-option[data-lang="zh"] img {
 .chronology-subtitle {
     margin-top: 0.5rem;
     color: var(--text-muted);
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .timeline-container {
@@ -799,7 +806,7 @@ html[lang="zh"] .lang-btn-option[data-lang="zh"] img {
     font-size: 0.85rem;
     color: var(--text-muted);
     line-height: 1.5;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 /* Philosophy Section */
@@ -824,7 +831,7 @@ html[lang="zh"] .lang-btn-option[data-lang="zh"] img {
 .philosophy-text {
     font-size: 1.8rem;
     line-height: 1.6;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 2rem;
     letter-spacing: -0.01em;
 }
@@ -857,7 +864,7 @@ html[lang="zh"] .lang-btn-option[data-lang="zh"] img {
 .contact-sub {
     font-size: 1.1rem;
     color: var(--text-muted);
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 3.5rem;
 }
 
@@ -1239,7 +1246,7 @@ textarea.form-input {
     font-size: 1.05rem;
     line-height: 1.7;
     color: var(--text-muted);
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .modal-description p {
@@ -1450,7 +1457,7 @@ textarea.form-input {
     font-size: 1.2rem;
     line-height: 1.8;
     color: var(--text-color);
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .about-pillars {
@@ -1498,7 +1505,7 @@ textarea.form-input {
     font-size: 0.95rem;
     line-height: 1.65;
     color: var(--text-muted);
-    font-weight: 300;
+    font-weight: 400;
 }
 
 /* Animations */
