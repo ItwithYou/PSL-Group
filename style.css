@@ -2177,27 +2177,26 @@ textarea.form-input {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 0.75rem;
-    margin-top: 2rem;
-    width: 100%; /* Fit cleanly inside .hero-intro */
-    justify-content: space-between;
+    gap: 1.5rem;
+    width: max-content;
+    justify-content: flex-start;
 }
 .vision-glass-grid::-webkit-scrollbar {
     display: none;
 }
 
 .vision-glass-card {
-    flex: 1 1 0; /* Equal width for all 5 */
-    white-space: normal !important; /* Allow text to wrap */
+    flex: 0 0 auto !important; /* Don't squeeze */
+    white-space: nowrap !important; /* Don't wrap text */
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center; /* Center content inside */
-    gap: 0.5rem;
-    width: 100% !important;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    width: auto !important;
     height: auto !important;
-    border-radius: 20px !important; /* Rounded rectangle instead of pill */
-    padding: 0.75rem 0.5rem !important;
+    border-radius: 50px !important; /* Pill shape for floating look */
+    padding: 0.75rem 1.5rem !important; /* Wider padding */
     background: rgba(255, 255, 255, 0.1) !important;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
