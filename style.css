@@ -143,8 +143,9 @@ html[lang="zh"] .lao-text {
 
 /* Header & Navigation Controls */
 .header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: 100;
     width: 100%;
     padding: 1.5rem 2rem;
@@ -347,7 +348,7 @@ html[lang="zh"] .lang-btn-option[data-lang="zh"] {
 
 /* Hero Section */
 .hero-section {
-    padding: 5rem 0 4rem 0;
+    padding: 9rem 0 4rem 0;
     border-bottom: 1px solid var(--border-color);
 }
 
