@@ -3739,23 +3739,28 @@ a.dock-item {
 @media (max-width: 768px) {
     /* Compress the Hero Section drastically to fit on one screen */
     .hero-section {
-        padding: 5rem 0 2rem 0 !important; /* Smaller top and bottom padding */
+        padding: 4.5rem 0 1rem 0 !important; /* Smaller top and bottom padding */
     }
     .hero-grid {
-        gap: 1rem !important; /* Reduce gap between intro and contact card */
+        gap: 0.5rem !important; /* Reduce gap between intro and contact card */
     }
     
     /* Shrink the title to fit nicely */
     .hero-title {
-        font-size: 1.8rem !important;
-        margin-bottom: 0.75rem !important;
-        line-height: 1.2 !important;
+        font-size: 1.6rem !important;
+        margin-bottom: 0.5rem !important;
+        line-height: 1.1 !important;
     }
     
     /* Condense the paragraphs */
     .vision-paragraph {
         font-size: 0.8rem !important;
-        line-height: 1.4 !important;
+        line-height: 1.3 !important;
+        margin-bottom: 0.5rem !important;
+    }
+    .hero-description {
+        font-size: 0.9rem !important;
+        line-height: 1.3 !important;
         margin-bottom: 0.5rem !important;
     }
     
@@ -3777,24 +3782,41 @@ a.dock-item {
     
     /* Shrink Contact Card container */
     .hero-meta {
-        margin-top: 0.5rem !important;
-        padding: 1rem !important;
+        margin-top: 0.2rem !important;
+        padding: 0.8rem !important;
     }
     .meta-item {
-        padding-bottom: 0.5rem !important;
-        margin-bottom: 0.5rem !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        padding-bottom: 0.4rem !important;
+        margin-bottom: 0.4rem !important;
+        gap: 0.5rem !important;
     }
     .meta-item:last-child {
         padding-bottom: 0 !important;
         margin-bottom: 0 !important;
     }
-    .meta-value {
-        font-size: 0.8rem !important;
+    .meta-content {
+        flex-direction: column !important;
+        justify-content: center !important;
+        gap: 0 !important;
     }
-    .meta-icon {
-        font-size: 1rem !important;
-        width: 30px !important;
-        height: 30px !important;
+    .meta-value {
+        font-size: 0.75rem !important;
+        line-height: 1.2 !important;
+    }
+    .meta-label {
+        font-size: 0.6rem !important;
+        margin-bottom: 2px !important;
+    }
+    .meta-icon-box {
+        width: 32px !important;
+        height: 32px !important;
+        flex-shrink: 0 !important;
+    }
+    .meta-icon-box svg {
+        width: 14px !important;
+        height: 14px !important;
     }
 }
 
