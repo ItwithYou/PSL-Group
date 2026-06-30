@@ -44,21 +44,23 @@
 }
 
 [data-theme="tiffany"] {
-    /* Color Palette - Deep Tiffany Blue + frosted glass */
-    --bg-color: #3dbfb6;        /* deeper, richer Tiffany teal */
-    --text-color: #0d3733;      /* deep jewel-teal for headings & strong text */
-    --text-muted: #466863;      /* soft muted teal-grey for body */
-    --border-color: rgba(255, 255, 255, 0.55);  /* luminous glass edge */
-    --border-light: rgba(255, 255, 255, 0.38);
-    --accent-color: #0a8a85;    /* deeper Tiffany teal for crisp contrast */
+    /* Color Palette - Deep Tiffany teal canvas + warm GOLD cards */
+    --bg-color: #3dbfb6;        /* deep, rich Tiffany teal canvas */
+    --text-color: #2f2614;      /* espresso — text inside the gold cards */
+    --text-muted: #6a5c3c;      /* warm brown — body text inside cards */
+    --border-color: rgba(176, 142, 74, 0.34);   /* soft warm-gold card edge */
+    --border-light: rgba(176, 142, 74, 0.20);
+    --accent-color: #0a8a85;    /* Tiffany teal — accents that sit ON the gold */
     --accent-dark: #066e69;
-    --card-bg: rgba(255, 255, 255, 0.60);        /* frosted glass card */
-    --dock-bg: rgba(255, 255, 255, 0.55);
-    --dock-border: rgba(255, 255, 255, 0.6);
-    --dock-text: #0d3733;
+    --card-bg: #f1e4c2;         /* warm champagne-gold card */
+    --canvas-ink: #f7f1e1;      /* ivory — text that sits ON the teal canvas */
+    --canvas-gold: #ecd49b;     /* warm gold — kickers/dividers on the canvas */
+    --dock-bg: rgba(255, 255, 255, 0.82);
+    --dock-border: rgba(10, 138, 133, 0.16);
+    --dock-text: #133230;
     --dock-indicator: #0a8a85;
-    --modal-bg: #eafaf8;
-    --success-bg: #e3f6f3;
+    --modal-bg: #f1e4c2;
+    --success-bg: #efe6cc;
     --success-text: #0a8a85;
 }
 
@@ -4112,11 +4114,11 @@ html, body {
    and a clean seamless 5-pillar marquee. This block is authoritative.
    ========================================================================== */
 
-/* 1) Tiffany: frosted-glass surfaces on the Tiffany-blue canvas */
+/* 1) Tiffany: warm gold card surfaces on the deep teal canvas */
 [data-theme="tiffany"] {
-    --card-bg: rgba(255, 255, 255, 0.60);
-    --border-color: rgba(255, 255, 255, 0.55);
-    --border-light: rgba(255, 255, 255, 0.38);
+    --card-bg: #f1e4c2;
+    --border-color: rgba(176, 142, 74, 0.34);
+    --border-light: rgba(176, 142, 74, 0.20);
 }
 
 /* 2) The hero info card — a genuine elevated card in every theme */
@@ -4576,12 +4578,12 @@ html, body {
     --bloom: color-mix(in srgb, var(--accent-color) 18%, transparent);
 }
 [data-theme="tiffany"] {
-    --glass-surface: linear-gradient(155deg, rgba(255,255,255,0.45), rgba(255,255,255,0.12));
-    --glass-border: rgba(255,255,255,0.55);
-    --glass-top-light: rgba(255,255,255,0.9);
-    --glass-shadow: 0 18px 45px -22px rgba(19,50,48,0.22);
+    --glass-surface: linear-gradient(155deg, rgba(255,250,235,0.55), rgba(244,231,196,0.18));
+    --glass-border: rgba(176,142,74,0.34);
+    --glass-top-light: rgba(255,248,228,0.9);
+    --glass-shadow: 0 20px 48px -22px rgba(40,30,10,0.30);
     --orb-glow: 0 8px 22px -8px color-mix(in srgb, var(--accent-color) 35%, transparent);
-    --bloom: color-mix(in srgb, var(--accent-color) 10%, transparent);
+    --bloom: color-mix(in srgb, #c79a3f 22%, transparent);
 }
 
 /* --- frosted glass cards: refined surface, top light edge, ambient depth --- */
@@ -4773,10 +4775,10 @@ a, button, .dock-item, .theme-toggle, .lang-btn-option,
                    0 38px 72px -24px rgba(0,0,0,0.62);
 }
 [data-theme="tiffany"] {
-    /* soft, teal-tinted shadows — white cards floating on Tiffany blue */
-    --soft-shadow: 0 1px 2px rgba(19,50,48,0.05),
-                   0 10px 24px -12px rgba(19,50,48,0.14),
-                   0 30px 58px -26px rgba(19,50,48,0.20);
+    /* soft, warm shadows — gold cards floating on the deep teal canvas */
+    --soft-shadow: 0 1px 2px rgba(40,30,10,0.08),
+                   0 10px 24px -12px rgba(30,40,38,0.22),
+                   0 32px 60px -26px rgba(20,40,38,0.30);
 }
 
 /* --- elegant classic serif for display headings --- */
@@ -4899,30 +4901,85 @@ a, button, .dock-item, .theme-toggle, .lang-btn-option,
     -webkit-backdrop-filter: blur(20px) saturate(150%);
 }
 
-/* refined font-colour hierarchy — deep jewel-teal heads, soft teal body */
+/* --- TEXT ON THE TEAL CANVAS: ivory headings, gold kicker, light body --- */
 [data-theme="tiffany"] .section-title,
 [data-theme="tiffany"] .hero-title,
+[data-theme="tiffany"] .contact-title,
+[data-theme="tiffany"] .tier-header h3 {
+    color: var(--canvas-ink);
+    text-shadow: 0 1px 24px rgba(0,0,0,0.12);
+}
+[data-theme="tiffany"] .hero-description,
+[data-theme="tiffany"] .about-lead,
+[data-theme="tiffany"] .portfolio-subtitle,
+[data-theme="tiffany"] .vision-paragraph,
+[data-theme="tiffany"] .tier-subtitle,
+[data-theme="tiffany"] .contact-sub,
+[data-theme="tiffany"] .info-label,
+[data-theme="tiffany"] .info-value {
+    color: rgba(247, 241, 225, 0.85);
+}
+[data-theme="tiffany"] .sub-heading { color: var(--canvas-gold); }
+[data-theme="tiffany"] .sub-heading::before {
+    background: var(--canvas-gold);
+    box-shadow: 0 0 0 4px rgba(236,212,155,0.18), 0 0 12px rgba(236,212,155,0.6);
+}
+[data-theme="tiffany"] .section-divider {
+    background: linear-gradient(90deg, var(--canvas-gold), rgba(255,255,255,0.18) 55%, transparent) !important;
+}
+
+/* --- TEXT INSIDE THE GOLD CARDS: espresso headings, warm-brown body --- */
 [data-theme="tiffany"] .about-pillar h4,
 [data-theme="tiffany"] .portfolio-card h4,
 [data-theme="tiffany"] .roadmap-card h4,
 [data-theme="tiffany"] .project-entry-name,
 [data-theme="tiffany"] .activity-title,
-[data-theme="tiffany"] .contact-title {
-    color: #0b3a35;
+[data-theme="tiffany"] .org-capsule:not(.solid-gold) h4,
+[data-theme="tiffany"] .sub-chip-name,
+[data-theme="tiffany"] .hero-meta .meta-value {
+    color: #2f2614;
 }
-[data-theme="tiffany"] .hero-description,
 [data-theme="tiffany"] .about-pillar p,
 [data-theme="tiffany"] .portfolio-card .card-desc,
 [data-theme="tiffany"] .roadmap-card p,
 [data-theme="tiffany"] .project-entry-detail,
-[data-theme="tiffany"] .vision-paragraph,
-[data-theme="tiffany"] .activity-excerpt {
-    color: #3f6661;
+[data-theme="tiffany"] .activity-excerpt,
+[data-theme="tiffany"] .org-capsule:not(.solid-gold) p,
+[data-theme="tiffany"] .card-list li,
+[data-theme="tiffany"] .past-list li {
+    color: #6a5c3c;
 }
-/* keep the glass icon orbs luminous on the frosted surface */
+
+/* gold card surfaces for the remaining bespoke cards */
+[data-theme="tiffany"] .hero-meta {
+    background: linear-gradient(160deg, #f4e8ca, #ecdcb4);
+    border: 1px solid rgba(176,142,74,0.34);
+    box-shadow: 0 22px 50px -22px rgba(30,40,38,0.32), inset 0 1px 0 rgba(255,250,235,0.7);
+}
+[data-theme="tiffany"] .vision-glass-card,
+[data-theme="tiffany"] .sub-chip {
+    background: linear-gradient(160deg, #f4e8ca, #ecdcb4) !important;
+    border: 1px solid rgba(176,142,74,0.34) !important;
+}
+[data-theme="tiffany"] .info-modal-card,
+[data-theme="tiffany"] .company-info-trigger,
+[data-theme="tiffany"] .contact-form-container,
+[data-theme="tiffany"] .past-projects-container {
+    background: linear-gradient(160deg, #f4e8ca, #ecdcb4) !important;
+    border: 1px solid rgba(176,142,74,0.34) !important;
+}
+[data-theme="tiffany"] .glass-text { color: #2f2614 !important; }
+
+/* teal icon orbs read beautifully on the gold — keep them, refine the edge */
 [data-theme="tiffany"] .about-pillar-icon,
 [data-theme="tiffany"] .hero-meta .meta-icon-box {
-    border: 1px solid rgba(255,255,255,0.7);
+    border: 1px solid color-mix(in srgb, var(--accent-color) 30%, transparent);
+}
+
+/* the tier badge sits on the teal canvas → make it gold (not teal-on-teal) */
+[data-theme="tiffany"] .tier-badge {
+    background: linear-gradient(135deg, #e7c987, #c9a24f) !important;
+    color: #2f2614 !important;
 }
 
 /* ==========================================================================
@@ -4991,3 +5048,201 @@ a, button, .dock-item, .theme-toggle, .lang-btn-option,
     background: linear-gradient(135deg, var(--accent-color), var(--accent-dark)) !important;
     box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--accent-color) 60%, transparent) !important;
 }
+
+/* Tiffany: the contact form sits in a gold card → cream inputs, espresso text */
+[data-theme="tiffany"] .form-input {
+    background-color: rgba(255, 252, 244, 0.9) !important;
+    border: 1px solid rgba(176,142,74,0.34) !important;
+    color: #2f2614 !important;
+}
+[data-theme="tiffany"] .form-input::placeholder { color: #9a8a64; }
+[data-theme="tiffany"] .form-label { color: #2f2614; }
+
+/* ==========================================================================
+   CORPORATE ROADMAP · "The Road Ahead" — a perspective road to the future
+   A dark asphalt road recedes to a glowing horizon (far = founding) and
+   widens toward the viewer (near = today → future). Gold lane markings drift
+   forward; milestones sit along the road, growing as they approach.
+   ========================================================================== */
+.road-journey {
+    position: relative;
+    max-width: 1080px;
+    margin: 1rem auto 0;
+    padding: 0 1.5rem 2rem;
+}
+
+/* --- the road scene (sits behind the milestones) --- */
+.road-scene {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+.road-sky {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 220px;
+    background: radial-gradient(70% 120% at 50% 100%,
+        rgba(230,194,122,0.20), transparent 70%);
+}
+.road-horizon {
+    position: absolute;
+    top: 46px; left: 50%;
+    transform: translateX(-50%);
+    width: 240px; height: 90px;
+    background: radial-gradient(ellipse at center,
+        rgba(255,244,214,0.9), rgba(230,194,122,0.5) 35%, transparent 72%);
+    filter: blur(6px);
+    border-radius: 50%;
+}
+.road-surface {
+    position: absolute;
+    top: 80px; bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 340px;
+    background:
+        linear-gradient(180deg, #1c4a47 0%, #123734 40%, #0c2826 100%);
+    clip-path: polygon(45.5% 0, 54.5% 0, 86% 100%, 14% 100%);
+    box-shadow: 0 0 80px rgba(0,0,0,0.25);
+}
+/* soft bright edges of the tarmac */
+.road-surface::before,
+.road-surface::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 46%;
+    background: linear-gradient(180deg, rgba(230,194,122,0.55), rgba(230,194,122,0.12));
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 96% 100%);
+    opacity: 0.5;
+}
+.road-surface::before { left: 0; transform: scaleX(-1); }
+.road-surface::after  { right: 0; }
+/* drifting centre lane markings (perspective taper) */
+.road-lane {
+    position: absolute;
+    top: 80px; bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 64px;
+    clip-path: polygon(46% 0, 54% 0, 58% 100%, 42% 100%);
+    background: repeating-linear-gradient(180deg,
+        rgba(244,214,150,0.95) 0 16px, transparent 16px 54px);
+    animation: roadLaneMove 1.5s linear infinite;
+}
+@keyframes roadLaneMove {
+    to { background-position-y: 70px; }
+}
+
+/* --- milestones along the road --- */
+.road-stops {
+    position: relative;
+    z-index: 2;
+    padding-top: 96px;
+}
+.road-stop {
+    display: grid;
+    grid-template-columns: 1fr 96px 1fr;
+    align-items: center;
+    column-gap: 1.5rem;
+    margin-bottom: 1.6rem;
+}
+.road-card {
+    grid-column: 1;
+    justify-self: end;
+    position: relative;
+    max-width: 430px;
+    background: var(--card-bg);
+    background-image: var(--glass-surface);
+    background-blend-mode: overlay;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.55rem 1.8rem;
+    box-shadow: var(--soft-shadow), var(--card-frame);
+}
+.road-stop:nth-child(even) .road-card {
+    grid-column: 3;
+    justify-self: start;
+}
+/* connector from card to the road */
+.road-card::after {
+    content: "";
+    position: absolute;
+    top: 2rem;
+    width: 1.5rem; height: 2px;
+    background: linear-gradient(90deg, rgba(230,194,122,0.9), rgba(230,194,122,0.2));
+}
+.road-stop:nth-child(odd) .road-card::after { right: -1.5rem; }
+.road-stop:nth-child(even) .road-card::after { left: -1.5rem; transform: scaleX(-1); }
+
+.road-year {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+}
+.road-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 0.5rem 0;
+}
+.road-card p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* the milestone node sitting on the road (grows as it nears the viewer) */
+.road-node {
+    grid-column: 2;
+    justify-self: center;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: #f4d696;
+    border: 2px solid #fff7e6;
+    box-shadow: 0 0 0 5px rgba(230,194,122,0.18), 0 0 16px rgba(244,214,150,0.85);
+}
+.road-stops .road-stop:nth-child(2) .road-node { width: 20px; height: 20px; }
+.road-stops .road-stop:nth-child(3) .road-node { width: 24px; height: 24px; }
+
+/* --- the future, nearest to the viewer --- */
+.road-stop--future .road-node--future {
+    width: 52px; height: 52px;
+    display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(circle at 35% 30%, #fff4d6, #e6c27a 70%);
+    box-shadow: 0 0 0 8px rgba(230,194,122,0.20),
+                0 0 30px rgba(244,214,150,0.9);
+    animation: roadFuturePulse 2.6s ease-in-out infinite;
+}
+.road-stop--future .road-node--future::after {
+    content: "";
+    width: 14px; height: 14px;
+    border-right: 3px solid #5a3d12;
+    border-bottom: 3px solid #5a3d12;
+    transform: rotate(45deg) translate(-2px,-2px);
+}
+@keyframes roadFuturePulse {
+    0%, 100% { box-shadow: 0 0 0 8px rgba(230,194,122,0.20), 0 0 26px rgba(244,214,150,0.8); }
+    50%      { box-shadow: 0 0 0 12px rgba(230,194,122,0.10), 0 0 42px rgba(244,214,150,1); }
+}
+.road-card--future {
+    border-color: rgba(230,194,122,0.6);
+    box-shadow: var(--soft-shadow), 0 0 0 1px rgba(230,194,122,0.4), 0 18px 50px -18px rgba(230,194,122,0.5);
+}
+.road-year--future {
+    font-family: var(--font-primary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #c79436;
+}
+
+/* a little extra room so the glowing horizon reads as "distance" */
+.roadmap-section .roadmap-header { margin-bottom: 0.5rem; }
