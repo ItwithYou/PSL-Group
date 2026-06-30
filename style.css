@@ -4742,3 +4742,107 @@ a, button, .dock-item, .theme-toggle, .lang-btn-option,
         scroll-behavior: auto !important;
     }
 }
+
+/* ==========================================================================
+   CLASSIC LUXURY · soft, framed cards + elegant serif headings
+   --------------------------------------------------------------------------
+   A government-grade, "wealth" feel: every card softened with deep layered
+   shadows, a refined accent frame-line, generous rounded corners, and a
+   classic serif for display headings (paired with Noto Serif Lao so Lao
+   script stays coherent). Touches every box so nothing feels flat.
+   ========================================================================== */
+
+:root {
+    /* deep, soft, layered shadow — reads as expensive, not harsh */
+    --soft-shadow: 0 1px 2px rgba(10,37,64,0.04),
+                   0 10px 22px -10px rgba(10,37,64,0.10),
+                   0 32px 60px -22px rgba(10,37,64,0.16);
+    --glass-shadow: var(--soft-shadow);
+    /* fine accent hairline along the top inner edge — the "framed art" detail */
+    --card-frame: inset 0 1.5px 0 color-mix(in srgb, var(--accent-color) 32%, transparent);
+    --font-display: 'Playfair Display', 'Noto Serif Lao', Georgia, 'Times New Roman', serif;
+}
+[data-theme="dark"],
+[data-theme="tiffany"] {
+    --soft-shadow: 0 1px 2px rgba(0,0,0,0.30),
+                   0 12px 28px -12px rgba(0,0,0,0.50),
+                   0 38px 72px -24px rgba(0,0,0,0.62);
+}
+
+/* --- elegant classic serif for display headings --- */
+.hero-title,
+.section-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.005em;
+}
+.hero-title { font-weight: 700; letter-spacing: -0.01em; }
+
+/* --- one soft, framed card language for every box on the site --- */
+.about-pillar,
+.activity-card,
+.contact-card,
+.project-entry,
+.roadmap-card,
+.portfolio-card,
+.vision-glass-card,
+.org-card,
+.hero-meta,
+.step-content,
+.info-modal-card {
+    border-radius: 18px !important;
+    box-shadow: var(--soft-shadow), var(--card-frame) !important;
+    transition: transform 0.55s cubic-bezier(0.16,1,0.3,1),
+                box-shadow 0.55s cubic-bezier(0.16,1,0.3,1),
+                border-color 0.45s ease !important;
+}
+
+/* normalise the heavy coloured top borders into the refined inset frame */
+.roadmap-card,
+.hero-meta {
+    border-top: 1px solid var(--glass-border) !important;
+}
+
+/* gentle, consistent hover: soft lift + warm accent bloom + accent edge */
+.about-pillar:hover,
+.activity-card:hover,
+.contact-card:hover,
+.project-entry:hover,
+.portfolio-card:hover,
+.vision-glass-card:hover,
+.roadmap-card:hover,
+.org-card:hover {
+    box-shadow: var(--soft-shadow), var(--card-frame),
+                0 26px 60px -26px var(--bloom) !important;
+    border-color: color-mix(in srgb, var(--accent-color) 45%, var(--border-color)) !important;
+}
+
+/* soften the smaller pieces too — chips, org capsules, stat tiles */
+.sub-chip { box-shadow: var(--soft-shadow); border-radius: 16px; }
+.spec-chip { box-shadow: var(--soft-shadow); border-radius: 12px; }
+.org-capsule { box-shadow: var(--soft-shadow) !important; }
+.stat-item { border-radius: 12px; box-shadow: var(--soft-shadow); }
+
+/* refined gold-to-hairline dividers (classic, restrained) */
+.section-divider {
+    height: 1px !important;
+    background: linear-gradient(90deg,
+        color-mix(in srgb, var(--accent-color) 42%, transparent),
+        var(--border-color) 55%, transparent) !important;
+}
+
+/* refine the portfolio cards' loud top stripe into an elegant gold band, and
+   drop the doubled inset frame so each card carries a single classic accent */
+.card-glass-bg {
+    height: 3px !important;
+    background: linear-gradient(90deg,
+        color-mix(in srgb, var(--accent-color) 22%, transparent),
+        var(--accent-color) 50%,
+        color-mix(in srgb, var(--accent-color) 22%, transparent)) !important;
+}
+.portfolio-card {
+    box-shadow: var(--soft-shadow) !important;
+}
+.portfolio-card:hover {
+    box-shadow: var(--soft-shadow), 0 26px 60px -26px var(--bloom) !important;
+}
