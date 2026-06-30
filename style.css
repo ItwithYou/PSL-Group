@@ -44,8 +44,8 @@
 }
 
 [data-theme="tiffany"] {
-    /* Color Palette - Authentic light Tiffany Blue (#81D8D0) + frosted glass */
-    --bg-color: #88d9d2;        /* the iconic Tiffany robin's-egg blue */
+    /* Color Palette - Deep Tiffany Blue + frosted glass */
+    --bg-color: #3dbfb6;        /* deeper, richer Tiffany teal */
     --text-color: #0d3733;      /* deep jewel-teal for headings & strong text */
     --text-muted: #466863;      /* soft muted teal-grey for body */
     --border-color: rgba(255, 255, 255, 0.55);  /* luminous glass edge */
@@ -4877,8 +4877,8 @@ a, button, .dock-item, .theme-toggle, .lang-btn-option,
 /* airy canvas: a soft vertical wash of Tiffany blue (lighter at the top) */
 [data-theme="tiffany"] body {
     background-image:
-        radial-gradient(120% 80% at 50% -10%, rgba(255,255,255,0.55), transparent 55%),
-        linear-gradient(180deg, #9ee0da 0%, #84d6cf 45%, #7fd2cb 100%);
+        radial-gradient(120% 80% at 50% -10%, rgba(255,255,255,0.42), transparent 55%),
+        linear-gradient(180deg, #57cbc2 0%, #3dbfb6 48%, #2faea5 100%);
     background-attachment: fixed;
 }
 
