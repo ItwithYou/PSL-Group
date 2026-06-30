@@ -336,6 +336,8 @@ html[lang="zh"] .lang-btn-option[data-lang="zh"] img {
 .hero-section {
     padding: 9rem 0 4rem 0;
     border-bottom: 1px solid var(--border-color);
+    overflow: hidden; /* Hide the sliding pillars overflow */
+    position: relative;
 }
 
 .hero-grid {
@@ -376,10 +378,6 @@ html[lang="zh"] .lang-btn-option[data-lang="zh"] img {
 @keyframes desktopMarquee {
     0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
-}
-
-.hero-intro {
-    overflow-x: hidden; /* Hide the pillars before they enter and after they leave */
 }
 
 .hero-pillars-row::-webkit-scrollbar {
