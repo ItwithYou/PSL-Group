@@ -44,20 +44,20 @@
 }
 
 [data-theme="tiffany"] {
-    /* Color Palette - Authentic light Tiffany Blue (#81D8D0 box-blue + white) */
-    --bg-color: #84d6cf;        /* the iconic Tiffany robin's-egg blue */
-    --text-color: #133230;      /* deep charcoal-teal, near black */
-    --text-muted: #3c5d59;      /* soft muted teal-grey */
-    --border-color: #cdeee9;    /* gentle hairline on white cards */
-    --border-light: #def5f1;
+    /* Color Palette - Authentic light Tiffany Blue (#81D8D0) + frosted glass */
+    --bg-color: #88d9d2;        /* the iconic Tiffany robin's-egg blue */
+    --text-color: #0d3733;      /* deep jewel-teal for headings & strong text */
+    --text-muted: #466863;      /* soft muted teal-grey for body */
+    --border-color: rgba(255, 255, 255, 0.55);  /* luminous glass edge */
+    --border-light: rgba(255, 255, 255, 0.38);
     --accent-color: #0a8a85;    /* deeper Tiffany teal for crisp contrast */
     --accent-dark: #066e69;
-    --card-bg: #ffffff;         /* clean white jewellery-box cards */
-    --dock-bg: rgba(255, 255, 255, 0.82);
-    --dock-border: rgba(10, 138, 133, 0.16);
-    --dock-text: #133230;
+    --card-bg: rgba(255, 255, 255, 0.60);        /* frosted glass card */
+    --dock-bg: rgba(255, 255, 255, 0.55);
+    --dock-border: rgba(255, 255, 255, 0.6);
+    --dock-text: #0d3733;
     --dock-indicator: #0a8a85;
-    --modal-bg: #f2fbfa;
+    --modal-bg: #eafaf8;
     --success-bg: #e3f6f3;
     --success-text: #0a8a85;
 }
@@ -4106,11 +4106,11 @@ html, body {
    and a clean seamless 5-pillar marquee. This block is authoritative.
    ========================================================================== */
 
-/* 1) Tiffany: clean white surfaces on the Tiffany-blue canvas */
+/* 1) Tiffany: frosted-glass surfaces on the Tiffany-blue canvas */
 [data-theme="tiffany"] {
-    --card-bg: #ffffff;
-    --border-color: #cdeee9;
-    --border-light: #def5f1;
+    --card-bg: rgba(255, 255, 255, 0.60);
+    --border-color: rgba(255, 255, 255, 0.55);
+    --border-light: rgba(255, 255, 255, 0.38);
 }
 
 /* 2) The hero info card — a genuine elevated card in every theme */
@@ -4124,9 +4124,11 @@ html, body {
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
 }
 [data-theme="tiffany"] .hero-meta {
-    background: linear-gradient(160deg, #ffffff, #f3fbfa);
-    border: 1px solid rgba(10, 138, 133, 0.18);
-    box-shadow: 0 22px 50px -20px rgba(19, 50, 48, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    background: linear-gradient(160deg, rgba(255,255,255,0.62), rgba(255,255,255,0.32));
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 22px 50px -22px rgba(19, 50, 48, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(26px) saturate(150%);
+    -webkit-backdrop-filter: blur(26px) saturate(150%);
 }
 [data-theme="tiffany"] .hero-meta .meta-icon-box {
     background: rgba(10, 138, 133, 0.12);
@@ -4185,9 +4187,11 @@ html, body {
     transition: transform 0.25s ease !important;
 }
 [data-theme="tiffany"] .vision-glass-card {
-    background: rgba(255, 255, 255, 0.92) !important;
-    border: 1px solid rgba(10, 138, 133, 0.22) !important;
-    box-shadow: 0 6px 18px -8px rgba(19, 50, 48, 0.22) !important;
+    background: rgba(255, 255, 255, 0.55) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 0 6px 18px -8px rgba(19, 50, 48, 0.20) !important;
+    backdrop-filter: blur(16px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(150%) !important;
 }
 [data-theme="dark"] .vision-glass-card {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
@@ -4496,9 +4500,11 @@ html, body {
 }
 [data-theme="dark"] .sub-chip { box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4); }
 [data-theme="tiffany"] .sub-chip {
-    background: #ffffff;
-    border: 1px solid rgba(10, 138, 133, 0.18);
-    box-shadow: 0 10px 26px -14px rgba(19, 50, 48, 0.22);
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 26px -14px rgba(19, 50, 48, 0.20);
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
 }
 .sub-chip-logo { width: 40px; height: 40px; object-fit: contain; flex-shrink: 0; }
 .sub-chip-name { font-weight: 600; font-size: 0.98rem; color: var(--text-color); letter-spacing: 0.01em; }
@@ -4564,12 +4570,12 @@ html, body {
     --bloom: color-mix(in srgb, var(--accent-color) 18%, transparent);
 }
 [data-theme="tiffany"] {
-    --glass-surface: linear-gradient(155deg, rgba(255,255,255,0.92), rgba(232,248,246,0.6));
-    --glass-border: rgba(10,138,133,0.16);
-    --glass-top-light: rgba(255,255,255,0.95);
-    --glass-shadow: 0 18px 45px -20px rgba(19,50,48,0.20);
-    --orb-glow: 0 8px 22px -8px color-mix(in srgb, var(--accent-color) 40%, transparent);
-    --bloom: color-mix(in srgb, var(--accent-color) 12%, transparent);
+    --glass-surface: linear-gradient(155deg, rgba(255,255,255,0.45), rgba(255,255,255,0.12));
+    --glass-border: rgba(255,255,255,0.55);
+    --glass-top-light: rgba(255,255,255,0.9);
+    --glass-shadow: 0 18px 45px -22px rgba(19,50,48,0.22);
+    --orb-glow: 0 8px 22px -8px color-mix(in srgb, var(--accent-color) 35%, transparent);
+    --bloom: color-mix(in srgb, var(--accent-color) 10%, transparent);
 }
 
 /* --- frosted glass cards: refined surface, top light edge, ambient depth --- */
@@ -4857,3 +4863,58 @@ a, button, .dock-item, .theme-toggle, .lang-btn-option,
 }
 /* value figures follow the theme accent (was hard-coded gold) */
 .card-value { color: var(--accent-color) !important; }
+
+/* ==========================================================================
+   TIFFANY · clean light "glass" refinement + font-colour hierarchy
+   ========================================================================== */
+
+/* airy canvas: a soft vertical wash of Tiffany blue (lighter at the top) */
+[data-theme="tiffany"] body {
+    background-image:
+        radial-gradient(120% 80% at 50% -10%, rgba(255,255,255,0.55), transparent 55%),
+        linear-gradient(180deg, #9ee0da 0%, #84d6cf 45%, #7fd2cb 100%);
+    background-attachment: fixed;
+}
+
+/* frost every card so the Tiffany blue glows softly through the glass */
+[data-theme="tiffany"] .project-entry,
+[data-theme="tiffany"] .roadmap-card,
+[data-theme="tiffany"] .portfolio-card,
+[data-theme="tiffany"] .vision-glass-card,
+[data-theme="tiffany"] .org-card,
+[data-theme="tiffany"] .step-content,
+[data-theme="tiffany"] .org-capsule:not(.solid-gold),
+[data-theme="tiffany"] .spec-chip,
+[data-theme="tiffany"] .stat-item,
+[data-theme="tiffany"] .contact-card,
+[data-theme="tiffany"] .about-pillar,
+[data-theme="tiffany"] .activity-card {
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+}
+
+/* refined font-colour hierarchy — deep jewel-teal heads, soft teal body */
+[data-theme="tiffany"] .section-title,
+[data-theme="tiffany"] .hero-title,
+[data-theme="tiffany"] .about-pillar h4,
+[data-theme="tiffany"] .portfolio-card h4,
+[data-theme="tiffany"] .roadmap-card h4,
+[data-theme="tiffany"] .project-entry-name,
+[data-theme="tiffany"] .activity-title,
+[data-theme="tiffany"] .contact-title {
+    color: #0b3a35;
+}
+[data-theme="tiffany"] .hero-description,
+[data-theme="tiffany"] .about-pillar p,
+[data-theme="tiffany"] .portfolio-card .card-desc,
+[data-theme="tiffany"] .roadmap-card p,
+[data-theme="tiffany"] .project-entry-detail,
+[data-theme="tiffany"] .vision-paragraph,
+[data-theme="tiffany"] .activity-excerpt {
+    color: #3f6661;
+}
+/* keep the glass icon orbs luminous on the frosted surface */
+[data-theme="tiffany"] .about-pillar-icon,
+[data-theme="tiffany"] .hero-meta .meta-icon-box {
+    border: 1px solid rgba(255,255,255,0.7);
+}
