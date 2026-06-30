@@ -335,9 +335,8 @@ html[lang="zh"] .lang-btn-option[data-lang="zh"] img {
 /* Hero Section */
 .hero-section {
     padding: 9rem 0 4rem 0;
-    border-bottom: 1px solid var(--border-color);
-    overflow: hidden; /* Hide the sliding pillars overflow */
     position: relative;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .hero-grid {
@@ -364,19 +363,28 @@ html[lang="zh"] .lang-btn-option[data-lang="zh"] img {
 }
 
 
+.hero-pillars-container {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
 .hero-pillars-row {
     display: flex;
     flex-direction: row;
     gap: 0.75rem;
-    margin-top: 2rem;
-    flex-wrap: nowrap; /* Force one line */
+    flex-wrap: nowrap;
     width: max-content;
-    animation: desktopMarquee 25s linear infinite;
-    padding: 10px 0; /* Add padding for hover effect */
+    animation: desktopMarquee 35s linear infinite; /* Slower, more premium speed */
 }
 
 @keyframes desktopMarquee {
-    0% { transform: translateX(100%); }
+    0% { transform: translateX(100vw); }
     100% { transform: translateX(-100%); }
 }
 
