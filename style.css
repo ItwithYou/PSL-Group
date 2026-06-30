@@ -3673,17 +3673,21 @@ a.dock-item {
 }
 
 @media (max-width: 900px) {
+    /* keep the CEO/company-info card beside the intro (its original narrow,
+       single-column layout) instead of stacking it full-width */
     .hero-grid {
-        flex-direction: column;
-        gap: 3rem;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1.5rem;
     }
     .hero-intro {
-        width: 100%;
+        width: 58%;
     }
     .hero-meta {
-        width: 100%;
-        max-width: 100%;
-        margin-top: 1rem;
+        width: 40%;
+        min-width: 0;
+        max-width: 330px;
+        margin-top: 0;
     }
 }
 
