@@ -3647,23 +3647,6 @@ a.dock-item {
         max-width: 100%;
         margin-top: 1rem;
     }
-    .hero-pillars-row {
-        width: 100vw;
-        margin-left: -2rem;
-        padding: 1rem 2rem;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-    }
-    .hero-pillars-row::-webkit-scrollbar {
-        display: none;
-    }
-    .hero-pillars-row .glass-orb {
-    flex: 0 0 auto;
-    white-space: nowrap;
-        flex: 0 0 auto;
-        scroll-snap-align: center;
     }
 }
 
@@ -3720,7 +3703,7 @@ a.dock-item {
     }
     
     @keyframes mobileMarquee {
-        0% { transform: translateX(100vw); }
+        0% { transform: translateX(100%); }
         100% { transform: translateX(-100%); }
     }
     
