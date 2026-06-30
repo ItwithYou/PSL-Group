@@ -262,7 +262,11 @@ function updateLanguageUI() {
     if (visText) visText.textContent = translations.visionText[currentLang];
 
     const visList = document.getElementById('vision-list');
-    if (visList) visList.innerHTML = translations.visionList[currentLang];
+    if (visList) {
+        const content = translations.visionList[currentLang];
+        // Duplicate content for seamless infinite marquee loop
+        visList.innerHTML = content + content;
+    }
 
     // Update data attribute translations
     document.querySelectorAll('[data-en][data-la]').forEach(el => {
