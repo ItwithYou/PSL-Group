@@ -190,6 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initScrollAnimations();
     initCompanyInfoPopup();
     initOrgChartCenter();
+    initSubsMarquee();
 
     // -----------------------------------------------------------------------------
     // Sticky Header Morphing
@@ -329,6 +330,15 @@ function initFilter() {
         });
     });
 }
+// Duplicate the subsidiaries track so the marquee loops seamlessly
+function initSubsMarquee() {
+    const track = document.getElementById('subs-track');
+    if (track && !track.dataset.cloned) {
+        track.innerHTML += track.innerHTML;
+        track.dataset.cloned = '1';
+    }
+}
+
 // Scale the original org chart so the WHOLE tree fits the screen width on phones
 function initOrgChartCenter() {
     const sc = document.querySelector('.org-scroll');

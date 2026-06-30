@@ -4311,7 +4311,7 @@ html, body {
         margin: 0 !important;
         zoom: 1 !important;
     }
-    .org-v-line, .org-h-split, .org-left-line, .org-h-connector { display: block !important; }
+    .org-v-line, .org-h-split, .org-left-line, .org-h-connector { display: none !important; }
 }
 
 /* ---- Premium polish for the org cards (all screen sizes; sizes unchanged) ---- */
@@ -4409,4 +4409,129 @@ html, body {
     .cit-title { font-size: 0.95rem; font-weight: 700; }
     .cit-sub { font-size: 0.72rem; color: var(--text-muted); }
     .cit-arrow { color: var(--accent-color); font-size: 1.15rem; flex-shrink: 0; }
+}
+
+/* ==========================================================================
+   ORG CHART — robust connectors (replace the misaligned manual line divs)
+   Guarantees lines meet the boxes at every size. Applies on desktop & mobile.
+   ========================================================================== */
+.org-v-line, .org-h-split, .org-left-line, .org-h-connector { display: none !important; }
+
+.org-columns-container { align-items: flex-start; }
+
+/* President -> Vice President */
+.org-center-chain > .org-capsule { position: relative; margin-bottom: 28px; }
+.org-center-chain > .org-capsule:last-child { margin-bottom: 0; }
+.org-center-chain > .org-capsule:not(:last-child)::after {
+    content: ''; position: absolute; left: 50%; top: 100%;
+    transform: translateX(-50%); width: 2px; height: 28px; background: #c29d5b;
+}
+
+/* Vice President -> horizontal bus */
+.org-columns-container { position: relative; margin-top: 28px; }
+.org-columns-container::before {
+    content: ''; position: absolute; left: 50%; top: -28px;
+    transform: translateX(-50%); width: 2px; height: 28px; background: #c29d5b;
+}
+
+/* Horizontal bus across the managers + a drop into each one */
+.org-column { position: relative; padding-top: 28px; }
+.org-column::before {  /* vertical drop to the manager */
+    content: ''; position: absolute; top: 0; left: 50%;
+    transform: translateX(-50%); width: 2px; height: 28px; background: #c29d5b;
+}
+.org-column::after {   /* bus segment (extends into the gaps so it's continuous) */
+    content: ''; position: absolute; top: 0; left: -24px; right: -24px;
+    height: 2px; background: #c29d5b;
+}
+.org-column:first-child::after { left: 50%; }
+.org-column:last-child::after { right: 50%; }
+.org-column:only-child::after { display: none; }
+
+/* Manager -> its units (centred, connected) */
+.org-left-tree { align-items: center; margin-top: 0; padding-left: 0; }
+.org-list-item { position: relative; margin-top: 26px; }
+.org-list-item::before {
+    content: ''; position: absolute; left: 50%; bottom: 100%;
+    transform: translateX(-50%); width: 2px; height: 26px; background: #c29d5b;
+}
+
+/* ==========================================================================
+   SUBSIDIARIES — live premium marquee of companies under PSL Group
+   ========================================================================== */
+.subsidiaries-section {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 2rem;
+}
+.subs-header { text-align: center; margin-bottom: 2.5rem; }
+.subs-marquee {
+    width: 100%;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.subs-track {
+    display: flex;
+    width: max-content;
+    align-items: stretch;
+    animation: pslMarquee 45s linear infinite;
+}
+.subs-track:hover { animation-play-state: paused; }
+.sub-chip {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-right: 1.25rem;
+    padding: 0.9rem 1.5rem;
+    border-radius: 16px;
+    white-space: nowrap;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+}
+[data-theme="dark"] .sub-chip { box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4); }
+[data-theme="tiffany"] .sub-chip {
+    background: rgba(10, 186, 181, 0.08);
+    border: 1px solid rgba(10, 186, 181, 0.30);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.30);
+}
+.sub-chip-logo { width: 40px; height: 40px; object-fit: contain; flex-shrink: 0; }
+.sub-chip-name { font-weight: 600; font-size: 0.98rem; color: var(--text-color); letter-spacing: 0.01em; }
+
+@media (max-width: 768px) {
+    .subsidiaries-section { padding: 3rem 0 1.5rem; }
+    .subs-track { animation-duration: 30s; }
+    .sub-chip { padding: 0.75rem 1.1rem; margin-right: 0.9rem; }
+    .sub-chip-logo { width: 32px; height: 32px; }
+    .sub-chip-name { font-size: 0.85rem; }
+}
+
+/* ==========================================================================
+   FIX: mobile menu (3-line) button colour in Tiffany mode
+   ========================================================================== */
+[data-theme="tiffany"] .mobile-dock-toggle {
+    background: rgba(10, 186, 181, 0.14) !important;
+    border: 1px solid rgba(10, 186, 181, 0.4) !important;
+    color: #6fe4df !important;
+}
+
+/* ==========================================================================
+   PREMIUM NAME-CARD popup (company info)
+   ========================================================================== */
+.info-modal-card {
+    border-top: 3px solid var(--accent-color) !important;
+}
+.info-modal-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.25rem;
+}
+.info-modal-brand img { width: 40px; height: 40px; object-fit: contain; }
+.info-modal-brand .imb-name { font-weight: 700; font-size: 1.05rem; color: var(--text-color); }
+.info-modal-brand .imb-tag {
+    font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent-color); font-weight: 600;
 }
