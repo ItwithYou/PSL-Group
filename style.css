@@ -5288,3 +5288,25 @@ a, button, .dock-item, .theme-toggle, .lang-btn-option,
 .org-card-modern { width: max-content; }
 .org-card-modern h4 { white-space: nowrap; font-size: 0.98rem; }
 .org-capsule h4, .org-capsule p { white-space: nowrap; }
+/* keep the chart within the viewport so the JS can scale it to fit any width */
+.org-section { max-width: 100vw; overflow: hidden; }
+.org-scroll { width: 100%; max-width: 100vw; overflow: hidden; margin: 0 auto; }
+
+/* ==========================================================================
+   PHONE (scaled ~900 viewport): compact the top nav so it fits in one tidy
+   row. Because the whole page is scaled less, these still render larger and
+   are easier to tap than the previous layout.
+   ========================================================================== */
+@media (max-width: 1000px) {
+    .header-container { padding: 0.5rem 0.85rem; }
+    .brand-logo { font-size: 1.12rem; gap: 0.5rem; }
+    .brand-logo-img { height: 28px; }
+    .dock-list { gap: 2px; }
+    a.dock-item { padding: 6px 9px; gap: 5px; }
+    .dock-item { min-width: 0; }
+    .dock-icon { width: 28px; height: 28px; }
+    .dock-icon svg { width: 17px; height: 17px; }
+    .dock-label { font-size: 0.64rem; }
+    .header-controls { gap: 0.55rem; }
+    .lang-switch-toggle, .lang-btn-option { gap: 0.3rem; }
+}
