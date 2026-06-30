@@ -4097,3 +4097,124 @@ html, body {
         grid-template-columns: 1fr !important;
     }
 }
+
+/* ==========================================================================
+   PREMIUM REFRESH (2026): elevated Tiffany surfaces, real info card,
+   and a clean seamless 5-pillar marquee. This block is authoritative.
+   ========================================================================== */
+
+/* 1) Tiffany: lift the surfaces so cards read as premium, not flat */
+[data-theme="tiffany"] {
+    --card-bg: #103230;
+    --border-color: #235c57;
+    --border-light: #18433f;
+}
+
+/* 2) The hero info card — a genuine elevated card in every theme */
+.hero-meta {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+}
+[data-theme="dark"] .hero-meta {
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+}
+[data-theme="tiffany"] .hero-meta {
+    background: linear-gradient(160deg, rgba(18, 60, 56, 0.96), rgba(11, 40, 38, 0.96));
+    border: 1px solid rgba(10, 186, 181, 0.32);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.40), inset 0 1px 0 rgba(10, 186, 181, 0.12);
+}
+[data-theme="tiffany"] .hero-meta .meta-icon-box {
+    background: rgba(10, 186, 181, 0.16);
+    color: #6fe4df;
+}
+.hero-meta .meta-item { border-bottom-color: var(--border-light); }
+
+/* 3) Seamless floating marquee of the 5 pillars (all screen sizes) */
+.hero-pillars-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 1.6rem 0;
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+.hero-pillars-row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: max-content !important;
+    gap: 0 !important;
+    /* opacity:1 is required: the .animate-text-delay class sets opacity:0 and
+       relies on a fadeIn animation, but our marquee animation replaces it */
+    opacity: 1 !important;
+    animation: pslMarquee 32s linear infinite !important;
+}
+.hero-pillars-row:hover { animation-play-state: paused !important; }
+.vision-glass-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: max-content !important;
+    gap: 0 !important;
+}
+@keyframes pslMarquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+/* Each pillar is a clean floating pill; margin (not gap) keeps the loop seamless */
+.hero-pillars-row .vision-glass-card,
+.vision-glass-card {
+    position: relative !important;
+    flex: 0 0 auto !important;
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.55rem !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 0.9rem 0 0 !important;
+    padding: 0.6rem 1.2rem !important;
+    border-radius: 999px !important;
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08) !important;
+    transition: transform 0.25s ease !important;
+}
+[data-theme="tiffany"] .vision-glass-card {
+    background: rgba(10, 186, 181, 0.18) !important;
+    border: 1px solid rgba(10, 186, 181, 0.45) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25) !important;
+}
+[data-theme="dark"] .vision-glass-card {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
+}
+.vision-glass-card:hover { transform: translateY(-3px) !important; }
+.vision-glass-card::before { display: none !important; } /* drop old glow blob */
+.vision-glass-card .glass-icon {
+    font-size: 1.2rem !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+}
+.vision-glass-card .glass-text {
+    font-size: 0.88rem !important;
+    font-weight: 600 !important;
+    color: var(--text-color) !important;
+    white-space: nowrap !important;
+    opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+    .hero-pillars-container {
+        margin-top: 1.25rem;
+        padding: 1.25rem 0;
+    }
+    .hero-pillars-row {
+        animation-duration: 22s !important;
+    }
+    .vision-glass-card {
+        padding: 0.5rem 1rem !important;
+        margin-right: 0.7rem !important;
+    }
+    .vision-glass-card .glass-text { font-size: 0.8rem !important; }
+}
