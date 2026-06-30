@@ -382,7 +382,7 @@ html[lang="zh"] .lang-btn-option[data-lang="zh"] img {
 }
 
 @keyframes desktopMarquee {
-    0% { transform: translateX(100%); }
+    0% { transform: translateX(100vw); }
     100% { transform: translateX(-100%); }
 }
 
@@ -3647,7 +3647,6 @@ a.dock-item {
         max-width: 100%;
         margin-top: 1rem;
     }
-    }
 }
 
 
@@ -3703,7 +3702,7 @@ a.dock-item {
     }
     
     @keyframes mobileMarquee {
-        0% { transform: translateX(100%); }
+        0% { transform: translateX(100vw); }
         100% { transform: translateX(-100%); }
     }
     
