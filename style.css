@@ -44,22 +44,22 @@
 }
 
 [data-theme="tiffany"] {
-    /* Color Palette - Premium Tiffany (Deep Elegant Teal with Warm Gold) */
-    --bg-color: #071c1c;
-    --text-color: #f4e8d1; /* Soft warm golden-white */
-    --text-muted: #c4a97f; /* Warm golden-beige */
-    --border-color: #193838;
-    --border-light: #122b2b;
-    --accent-color: #0abab5; /* Signature Tiffany Blue accent */
-    --accent-dark: #088a85;
-    --card-bg: #0e2424;
-    --dock-bg: rgba(7, 28, 28, 0.85);
-    --dock-border: rgba(196, 169, 127, 0.15);
-    --dock-text: #c4a97f;
-    --dock-indicator: #0abab5;
-    --modal-bg: #071c1c;
-    --success-bg: #0e2424;
-    --success-text: #0abab5;
+    /* Color Palette - Authentic light Tiffany Blue (#81D8D0 box-blue + white) */
+    --bg-color: #84d6cf;        /* the iconic Tiffany robin's-egg blue */
+    --text-color: #133230;      /* deep charcoal-teal, near black */
+    --text-muted: #3c5d59;      /* soft muted teal-grey */
+    --border-color: #cdeee9;    /* gentle hairline on white cards */
+    --border-light: #def5f1;
+    --accent-color: #0a8a85;    /* deeper Tiffany teal for crisp contrast */
+    --accent-dark: #066e69;
+    --card-bg: #ffffff;         /* clean white jewellery-box cards */
+    --dock-bg: rgba(255, 255, 255, 0.82);
+    --dock-border: rgba(10, 138, 133, 0.16);
+    --dock-text: #133230;
+    --dock-indicator: #0a8a85;
+    --modal-bg: #f2fbfa;
+    --success-bg: #e3f6f3;
+    --success-text: #0a8a85;
 }
 
 /* Base Styles */
@@ -161,7 +161,7 @@ html[lang="zh"] .lao-text {
 }
 
 [data-theme="tiffany"] .header {
-    background-color: rgba(7, 28, 28, 0.85);
+    background-color: rgba(244, 251, 250, 0.72);
 }
 
 .header-container {
@@ -4106,11 +4106,11 @@ html, body {
    and a clean seamless 5-pillar marquee. This block is authoritative.
    ========================================================================== */
 
-/* 1) Tiffany: lift the surfaces so cards read as premium, not flat */
+/* 1) Tiffany: clean white surfaces on the Tiffany-blue canvas */
 [data-theme="tiffany"] {
-    --card-bg: #103230;
-    --border-color: #235c57;
-    --border-light: #18433f;
+    --card-bg: #ffffff;
+    --border-color: #cdeee9;
+    --border-light: #def5f1;
 }
 
 /* 2) The hero info card — a genuine elevated card in every theme */
@@ -4124,13 +4124,13 @@ html, body {
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
 }
 [data-theme="tiffany"] .hero-meta {
-    background: linear-gradient(160deg, rgba(18, 60, 56, 0.96), rgba(11, 40, 38, 0.96));
-    border: 1px solid rgba(10, 186, 181, 0.32);
-    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.40), inset 0 1px 0 rgba(10, 186, 181, 0.12);
+    background: linear-gradient(160deg, #ffffff, #f3fbfa);
+    border: 1px solid rgba(10, 138, 133, 0.18);
+    box-shadow: 0 22px 50px -20px rgba(19, 50, 48, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 [data-theme="tiffany"] .hero-meta .meta-icon-box {
-    background: rgba(10, 186, 181, 0.16);
-    color: #6fe4df;
+    background: rgba(10, 138, 133, 0.12);
+    color: var(--accent-color);
 }
 .hero-meta .meta-item { border-bottom-color: var(--border-light); }
 
@@ -4185,9 +4185,9 @@ html, body {
     transition: transform 0.25s ease !important;
 }
 [data-theme="tiffany"] .vision-glass-card {
-    background: rgba(10, 186, 181, 0.18) !important;
-    border: 1px solid rgba(10, 186, 181, 0.45) !important;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25) !important;
+    background: rgba(255, 255, 255, 0.92) !important;
+    border: 1px solid rgba(10, 138, 133, 0.22) !important;
+    box-shadow: 0 6px 18px -8px rgba(19, 50, 48, 0.22) !important;
 }
 [data-theme="dark"] .vision-glass-card {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
@@ -4243,8 +4243,8 @@ html, body {
         border: 1px solid rgba(255, 255, 255, 0.10) !important;
     }
     [data-theme="tiffany"] .floating-dock {
-        background: #0b2926 !important;
-        border: 1px solid rgba(10, 186, 181, 0.35) !important;
+        background: rgba(255, 255, 255, 0.96) !important;
+        border: 1px solid rgba(10, 138, 133, 0.22) !important;
     }
     /* Clear, readable menu rows */
     .floating-dock .dock-item { color: var(--text-color) !important; }
@@ -4355,8 +4355,8 @@ html, body {
 }
 .info-modal.open .info-modal-card { transform: translateY(0); }
 [data-theme="tiffany"] .info-modal-card {
-    background: linear-gradient(160deg, #123c38, #0b2826);
-    border: 1px solid rgba(10,186,181,0.32);
+    background: linear-gradient(160deg, #ffffff, #f3fbfa);
+    border: 1px solid rgba(10,138,133,0.20);
 }
 .info-modal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.25rem; }
 .info-modal-title { font-size: 1.1rem; font-weight: 700; color: var(--text-color); }
@@ -4398,16 +4398,16 @@ html, body {
     }
     .company-info-trigger:active { transform: scale(0.98); }
     [data-theme="tiffany"] .company-info-trigger {
-        background: linear-gradient(160deg, rgba(18,60,56,0.96), rgba(11,40,38,0.96));
-        border: 1px solid rgba(10,186,181,0.35);
-        box-shadow: 0 10px 26px rgba(0,0,0,0.30);
+        background: linear-gradient(160deg, #ffffff, #f3fbfa);
+        border: 1px solid rgba(10,138,133,0.22);
+        box-shadow: 0 10px 26px -12px rgba(19,50,48,0.22);
     }
     .cit-icon {
         flex-shrink: 0; width: 42px; height: 42px;
         display: flex; align-items: center; justify-content: center;
         border-radius: 12px; background: rgba(191,161,95,0.15); color: var(--accent-color);
     }
-    [data-theme="tiffany"] .cit-icon { background: rgba(10,186,181,0.16); color: #6fe4df; }
+    [data-theme="tiffany"] .cit-icon { background: rgba(10,138,133,0.12); color: var(--accent-color); }
     .cit-text { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
     .cit-title { font-size: 0.95rem; font-weight: 700; }
     .cit-sub { font-size: 0.72rem; color: var(--text-muted); }
@@ -4496,9 +4496,9 @@ html, body {
 }
 [data-theme="dark"] .sub-chip { box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4); }
 [data-theme="tiffany"] .sub-chip {
-    background: rgba(10, 186, 181, 0.08);
-    border: 1px solid rgba(10, 186, 181, 0.30);
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.30);
+    background: #ffffff;
+    border: 1px solid rgba(10, 138, 133, 0.18);
+    box-shadow: 0 10px 26px -14px rgba(19, 50, 48, 0.22);
 }
 .sub-chip-logo { width: 40px; height: 40px; object-fit: contain; flex-shrink: 0; }
 .sub-chip-name { font-weight: 600; font-size: 0.98rem; color: var(--text-color); letter-spacing: 0.01em; }
@@ -4515,9 +4515,9 @@ html, body {
    FIX: mobile menu (3-line) button colour in Tiffany mode
    ========================================================================== */
 [data-theme="tiffany"] .mobile-dock-toggle {
-    background: rgba(10, 186, 181, 0.14) !important;
-    border: 1px solid rgba(10, 186, 181, 0.4) !important;
-    color: #6fe4df !important;
+    background: rgba(10, 138, 133, 0.10) !important;
+    border: 1px solid rgba(10, 138, 133, 0.35) !important;
+    color: #0a8a85 !important;
 }
 
 /* ==========================================================================
@@ -4564,12 +4564,12 @@ html, body {
     --bloom: color-mix(in srgb, var(--accent-color) 18%, transparent);
 }
 [data-theme="tiffany"] {
-    --glass-surface: linear-gradient(155deg, rgba(10,186,181,0.10), rgba(255,255,255,0.02));
-    --glass-border: rgba(10,186,181,0.20);
-    --glass-top-light: rgba(120,232,227,0.40);
-    --glass-shadow: 0 26px 55px -20px rgba(0,0,0,0.6);
-    --orb-glow: 0 8px 26px -6px color-mix(in srgb, var(--accent-color) 55%, transparent);
-    --bloom: color-mix(in srgb, var(--accent-color) 22%, transparent);
+    --glass-surface: linear-gradient(155deg, rgba(255,255,255,0.92), rgba(232,248,246,0.6));
+    --glass-border: rgba(10,138,133,0.16);
+    --glass-top-light: rgba(255,255,255,0.95);
+    --glass-shadow: 0 18px 45px -20px rgba(19,50,48,0.20);
+    --orb-glow: 0 8px 22px -8px color-mix(in srgb, var(--accent-color) 40%, transparent);
+    --bloom: color-mix(in srgb, var(--accent-color) 12%, transparent);
 }
 
 /* --- frosted glass cards: refined surface, top light edge, ambient depth --- */
@@ -4683,28 +4683,21 @@ html, body {
 
 /* refined section titles — a touch of glow lifts them off the dark canvas */
 [data-theme="dark"] .section-title,
-[data-theme="tiffany"] .section-title,
-[data-theme="dark"] .hero-title,
-[data-theme="tiffany"] .hero-title {
+[data-theme="dark"] .hero-title {
     text-shadow: 0 1px 30px color-mix(in srgb, var(--accent-color) 12%, transparent);
 }
 
-/* --- soft light blooms in the dark areas (localized, gentle) --- */
-[data-theme="dark"] .page-section,
-[data-theme="tiffany"] .page-section {
+/* --- soft light blooms in the dark areas (localized, gentle; dark theme only) --- */
+[data-theme="dark"] .page-section {
     position: relative;
 }
-[data-theme="dark"] .page-section > *,
-[data-theme="tiffany"] .page-section > * {
+[data-theme="dark"] .page-section > * {
     position: relative;
     z-index: 1;
 }
 [data-theme="dark"] #home::before,
-[data-theme="tiffany"] #home::before,
 [data-theme="dark"] #about::before,
-[data-theme="tiffany"] #about::before,
-[data-theme="dark"] #projects::before,
-[data-theme="tiffany"] #projects::before {
+[data-theme="dark"] #projects::before {
     content: "";
     position: absolute;
     top: 4%;
@@ -4762,11 +4755,16 @@ a, button, .dock-item, .theme-toggle, .lang-btn-option,
     --card-frame: inset 0 1.5px 0 color-mix(in srgb, var(--accent-color) 32%, transparent);
     --font-display: 'Playfair Display', 'Noto Serif Lao', Georgia, 'Times New Roman', serif;
 }
-[data-theme="dark"],
-[data-theme="tiffany"] {
+[data-theme="dark"] {
     --soft-shadow: 0 1px 2px rgba(0,0,0,0.30),
                    0 12px 28px -12px rgba(0,0,0,0.50),
                    0 38px 72px -24px rgba(0,0,0,0.62);
+}
+[data-theme="tiffany"] {
+    /* soft, teal-tinted shadows — white cards floating on Tiffany blue */
+    --soft-shadow: 0 1px 2px rgba(19,50,48,0.05),
+                   0 10px 24px -12px rgba(19,50,48,0.14),
+                   0 30px 58px -26px rgba(19,50,48,0.20);
 }
 
 /* --- elegant classic serif for display headings --- */
@@ -4846,3 +4844,16 @@ a, button, .dock-item, .theme-toggle, .lang-btn-option,
 .portfolio-card:hover {
     box-shadow: var(--soft-shadow), 0 26px 60px -26px var(--bloom) !important;
 }
+
+/* --- refined numerals: tabular figures + elegant display numbers --- */
+.stat-value, .card-value, .roadmap-year, .spec-chip-value,
+.meta-value, .project-entry-detail {
+    font-variant-numeric: tabular-nums lining-nums;
+    font-feature-settings: "tnum" 1, "lnum" 1;
+}
+.stat-value, .card-value {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+}
+/* value figures follow the theme accent (was hard-coded gold) */
+.card-value { color: var(--accent-color) !important; }
