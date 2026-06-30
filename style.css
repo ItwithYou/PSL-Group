@@ -234,6 +234,10 @@ html[lang="zh"] .lao-text {
     gap: 1.5rem;
 }
 
+.mobile-dock-toggle {
+    display: none;
+}
+
 .lang-switch-toggle {
     position: relative;
     display: flex;
