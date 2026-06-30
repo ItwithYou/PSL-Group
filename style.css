@@ -2785,12 +2785,15 @@ textarea.form-input {
 }
 
 .card-list li::before {
-    content: '•';
-    color: #8b0000;
-    font-size: 1.5rem;
+    content: '';
     position: absolute;
     left: 0;
-    top: -4px;
+    top: 0.5em;
+    width: 6px;
+    height: 6px;
+    border-radius: 2px;
+    background: var(--accent-color);
+    transform: rotate(45deg);
 }
 
 /* Tier 2 Highways */
@@ -2984,12 +2987,15 @@ body {
 }
 
 .card-list li::before {
-    content: '•';
-    color: #8b0000;
-    font-size: 1.5rem;
+    content: '';
     position: absolute;
     left: 0;
-    top: -4px;
+    top: 0.5em;
+    width: 6px;
+    height: 6px;
+    border-radius: 2px;
+    background: var(--accent-color);
+    transform: rotate(45deg);
 }
 
 /* Tier 2 Highways */
@@ -4917,4 +4923,71 @@ a, button, .dock-item, .theme-toggle, .lang-btn-option,
 [data-theme="tiffany"] .about-pillar-icon,
 [data-theme="tiffany"] .hero-meta .meta-icon-box {
     border: 1px solid rgba(255,255,255,0.7);
+}
+
+/* ==========================================================================
+   PRO ICONOGRAPHY · crafted line-icons replace emoji (premium, consistent)
+   ========================================================================== */
+.about-pillar-icon svg { width: 26px; height: 26px; display: block; }
+.glass-icon { display: inline-flex; align-items: center; justify-content: center; color: var(--accent-color); }
+.glass-icon svg { width: 18px; height: 18px; display: block; }
+.hw-icon { display: inline-flex; align-items: center; justify-content: center; color: var(--accent-color); }
+.hw-icon svg { width: 26px; height: 26px; display: block; }
+
+/* portfolio card icon → a refined accent glass orb, matching the about pillars */
+.card-icon {
+    width: 54px;
+    height: 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    color: var(--accent-color);
+    background: var(--orb-surface);
+    border: 1px solid color-mix(in srgb, var(--accent-color) 30%, transparent);
+    box-shadow: var(--orb-glow), inset 0 1px 1px rgba(255,255,255,0.4);
+    margin-bottom: 1.4rem;
+    font-size: 0;
+}
+.card-icon svg { width: 28px; height: 28px; display: block; }
+
+/* ==========================================================================
+   EDITORIAL TYPOGRAPHY · refined scale, rhythm and letter-spacing
+   ========================================================================== */
+.hero-title { letter-spacing: -0.018em; line-height: 1.07; }
+.section-title { letter-spacing: 0; line-height: 1.15; }
+.sub-heading { font-size: 0.7rem; letter-spacing: 0.26em; }
+.about-pillar h4,
+.portfolio-card h4,
+.roadmap-card h4,
+.project-entry-name { letter-spacing: 0.002em; }
+.hero-description,
+.about-lead,
+.about-pillar p,
+.card-desc,
+.portfolio-subtitle,
+.vision-paragraph { line-height: 1.78; }
+/* a touch more air inside the premium cards */
+.about-pillar { padding: 2.25rem 2rem; }
+.portfolio-card { padding: 2.6rem 2.2rem; }
+
+/* ==========================================================================
+   BRAND CONSISTENCY · every accent follows the active theme (no stray gold/red)
+   ========================================================================== */
+.tier-badge {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark)) !important;
+    color: #fff !important;
+}
+.hw-length {
+    color: var(--accent-color) !important;
+    background: color-mix(in srgb, var(--accent-color) 9%, transparent) !important;
+}
+.past-list li::before { color: var(--accent-color) !important; }
+.portfolio-card:hover,
+.roadmap-card:hover {
+    border-color: color-mix(in srgb, var(--accent-color) 45%, var(--border-color)) !important;
+}
+.roadmap-year {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark)) !important;
+    box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--accent-color) 60%, transparent) !important;
 }
