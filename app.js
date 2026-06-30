@@ -189,6 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initModals();
     initScrollAnimations();
     initCompanyInfoPopup();
+    initOrgChartCenter();
 
     // -----------------------------------------------------------------------------
     // Sticky Header Morphing
@@ -328,6 +329,19 @@ function initFilter() {
         });
     });
 }
+// Center the (horizontally scrollable) org chart so it opens on the President
+function initOrgChartCenter() {
+    const sc = document.querySelector('.org-scroll');
+    if (!sc) return;
+    const center = () => {
+        const extra = sc.scrollWidth - sc.clientWidth;
+        if (extra > 0) sc.scrollLeft = extra / 2;
+    };
+    center();
+    setTimeout(center, 300);
+    window.addEventListener('resize', center);
+}
+
 // Company Info popup (mobile): button opens the contact details in a modal
 function initCompanyInfoPopup() {
     const trigger = document.getElementById('company-info-trigger');

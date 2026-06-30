@@ -4283,88 +4283,58 @@ html, body {
 }
 
 /* ==========================================================================
-   MOBILE ORGANIZATION CHART — connected vertical tree (spine + branch lines)
+   MOBILE ORGANIZATION CHART — keep the ORIGINAL tree, readable + swipeable
    ========================================================================== */
 @media (max-width: 768px) {
-    .org-section { padding: 3.5rem 1rem !important; overflow: visible !important; position: relative !important; }
-    .org-section .org-header { padding: 0 !important; }
+    .org-section { padding: 3rem 0 3.5rem !important; overflow: hidden !important; position: relative !important; }
+    .org-section .org-header { padding: 0 1.25rem !important; }
 
-    /* Neutralise the scroll wrapper used on desktop fallback */
+    /* Full-bleed, viewport-wide frame that clips and scrolls horizontally */
     .org-scroll {
-        width: auto !important; max-width: 100% !important;
-        margin: 0 !important; transform: none !important;
-        overflow: visible !important; padding: 0 !important;
+        position: relative !important;
+        width: 100vw !important; max-width: 100vw !important;
+        margin-left: 50% !important; transform: translateX(-50%) !important;
+        box-sizing: border-box !important;
+        overflow-x: auto !important; overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding: 0.5rem 1rem 1rem !important;
     }
+    .org-scroll::-webkit-scrollbar { height: 4px !important; }
+    .org-scroll::-webkit-scrollbar-thumb { background: var(--accent-color) !important; border-radius: 3px !important; }
+
+    /* The real, original tree at a readable size with all connectors intact */
     .org-template-wrapper {
-        transform: none !important; zoom: 1 !important;
-        width: 100% !important; max-width: 420px !important; min-width: 0 !important;
-        margin: 0 auto !important; display: block !important;
+        transform: none !important;
+        zoom: 0.6 !important;
+        width: max-content !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        margin: 0 auto !important;
     }
+    .org-v-line, .org-h-split, .org-left-line, .org-h-connector { display: block !important; }
 
-    /* Hide the desktop connectors; we draw vertical-tree connectors instead */
-    .org-v-line, .org-h-split, .org-left-line, .org-h-connector { display: none !important; }
-
-    .org-center-chain, .org-columns-container, .org-column, .org-left-tree {
-        display: block !important; width: auto !important; max-width: 100% !important;
-        margin: 0 !important; padding: 0 !important;
+    /* Soft edge fades hint that the chart can be swiped */
+    .org-section::before,
+    .org-section::after {
+        content: '' !important; position: absolute !important; top: 0; bottom: 0;
+        width: 28px !important; z-index: 4 !important; pointer-events: none !important;
     }
-
-    /* Cards */
-    .org-capsule, .org-card-modern {
-        width: auto !important; max-width: 100% !important; box-sizing: border-box !important;
-        white-space: normal !important; text-align: left !important; margin: 0 !important;
-    }
-    .org-capsule { padding: 0.75rem 1rem !important; border-radius: 12px !important; }
-    .org-capsule h4 { font-size: 0.95rem !important; line-height: 1.3 !important; }
-    .org-capsule p { font-size: 0.8rem !important; }
-    .org-card-modern { padding: 0.6rem 0.85rem !important; border-radius: 10px !important; }
-    .org-card-modern h4 { font-size: 0.82rem !important; line-height: 1.3 !important; }
-
-    /* Level 1 — leadership (President, VP) on a left spine */
-    .org-center-chain { position: relative !important; padding-left: 26px !important; }
-    .org-center-chain::before {
-        content: '' !important; position: absolute !important;
-        left: 9px !important; top: 24px !important; bottom: 24px !important;
-        width: 2px !important; background: var(--accent-color) !important; opacity: 0.55 !important;
-    }
-    .org-center-chain > .org-capsule { position: relative !important; margin-bottom: 16px !important; }
-    .org-center-chain > .org-capsule::before {
-        content: '' !important; position: absolute !important;
-        left: -17px !important; top: 24px !important; width: 17px !important; height: 2px !important;
-        background: var(--accent-color) !important; opacity: 0.55 !important;
-    }
-
-    /* Level 2 — managers, indented under leadership, on their own spine */
-    .org-columns-container { position: relative !important; padding-left: 26px !important; margin: 14px 0 0 18px !important; }
-    .org-columns-container::before {
-        content: '' !important; position: absolute !important;
-        left: 9px !important; top: -14px !important; bottom: 26px !important;
-        width: 2px !important; background: var(--accent-color) !important; opacity: 0.5 !important;
-    }
-    .org-column { position: relative !important; margin-bottom: 16px !important; }
-    .org-column:last-child { margin-bottom: 0 !important; }
-    .org-column > .column-header { position: relative !important; }
-    .org-column > .column-header::before {
-        content: '' !important; position: absolute !important;
-        left: -17px !important; top: 24px !important; width: 17px !important; height: 2px !important;
-        background: var(--accent-color) !important; opacity: 0.5 !important;
-    }
-
-    /* Level 3 — sub-units, indented under each manager */
-    .org-left-tree { position: relative !important; padding-left: 22px !important; margin: 10px 0 0 16px !important; }
-    .org-left-tree::before {
-        content: '' !important; position: absolute !important;
-        left: 8px !important; top: -10px !important; bottom: 18px !important;
-        width: 2px !important; background: var(--accent-color) !important; opacity: 0.4 !important;
-    }
-    .org-list-item { position: relative !important; margin-bottom: 8px !important; }
-    .org-list-item:last-child { margin-bottom: 0 !important; }
-    .org-list-item::before {
-        content: '' !important; position: absolute !important;
-        left: -14px !important; top: 18px !important; width: 14px !important; height: 2px !important;
-        background: var(--accent-color) !important; opacity: 0.4 !important;
-    }
+    .org-section::before { left: 0; background: linear-gradient(90deg, var(--bg-color), transparent) !important; }
+    .org-section::after { right: 0; background: linear-gradient(270deg, var(--bg-color), transparent) !important; }
 }
+
+/* ---- Premium polish for the org cards (all screen sizes; sizes unchanged) ---- */
+.org-capsule { box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08) !important; }
+.org-capsule.solid-gold {
+    background: linear-gradient(135deg, #d9bd7e, #b8975a) !important;
+    box-shadow: 0 12px 28px rgba(184, 151, 90, 0.35) !important;
+}
+[data-theme="tiffany"] .org-capsule.solid-gold {
+    background: linear-gradient(135deg, #0fc9c3, #0a8f8a) !important;
+    box-shadow: 0 12px 28px rgba(10, 186, 181, 0.30) !important;
+}
+[data-theme="dark"] .org-capsule { box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45) !important; }
+.org-card-modern { box-shadow: 0 5px 16px rgba(0, 0, 0, 0.06) !important; }
 
 /* ==========================================================================
    MOBILE: company info as a tap-to-open button + popup
