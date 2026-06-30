@@ -329,17 +329,38 @@ function initFilter() {
         });
     });
 }
-// Center the (horizontally scrollable) org chart so it opens on the President
+// Scale the original org chart so the WHOLE tree fits the screen width on phones
 function initOrgChartCenter() {
     const sc = document.querySelector('.org-scroll');
-    if (!sc) return;
-    const center = () => {
-        const extra = sc.scrollWidth - sc.clientWidth;
-        if (extra > 0) sc.scrollLeft = extra / 2;
+    const wrap = document.querySelector('.org-template-wrapper');
+    if (!sc || !wrap) return;
+
+    const fit = () => {
+        if (window.innerWidth > 768) {
+            // Desktop: leave the chart at its natural size
+            wrap.style.transform = '';
+            sc.style.height = '';
+            return;
+        }
+        // Reset to measure the natural (unscaled) size. Use !important to beat
+        // leftover shrink-hack CSS rules on .org-template-wrapper.
+        wrap.style.setProperty('transform', 'none', 'important');
+        wrap.style.setProperty('zoom', '1', 'important');
+        const naturalW = wrap.scrollWidth;
+        const naturalH = wrap.scrollHeight;
+        const avail = sc.clientWidth;
+        if (!naturalW || !avail) return;
+        const scale = Math.min(1, avail / naturalW);
+        wrap.style.setProperty('transform-origin', 'top left', 'important');
+        wrap.style.setProperty('transform', 'scale(' + scale + ')', 'important');
+        // Collapse the empty space the transform leaves behind
+        sc.style.height = Math.ceil(naturalH * scale) + 'px';
     };
-    center();
-    setTimeout(center, 300);
-    window.addEventListener('resize', center);
+
+    fit();
+    setTimeout(fit, 250);
+    window.addEventListener('resize', fit);
+    window.addEventListener('load', fit);
 }
 
 // Company Info popup (mobile): button opens the contact details in a modal

@@ -4283,44 +4283,35 @@ html, body {
 }
 
 /* ==========================================================================
-   MOBILE ORGANIZATION CHART — keep the ORIGINAL tree, readable + swipeable
+   MOBILE ORGANIZATION CHART — original tree scaled to FIT the screen width
+   (JS measures the chart and sets the exact scale so nothing is cut off and
+    all connector lines stay aligned)
    ========================================================================== */
 @media (max-width: 768px) {
-    .org-section { padding: 3rem 0 3.5rem !important; overflow: hidden !important; position: relative !important; }
-    .org-section .org-header { padding: 0 1.25rem !important; }
+    .org-section { padding: 3rem 0.75rem 3rem !important; overflow: hidden !important; position: relative !important; }
+    .org-section .org-header { padding: 0 !important; }
 
-    /* Full-bleed, viewport-wide frame that clips and scrolls horizontally */
+    /* Force the frame to exactly the viewport width (full-bleed) so the JS
+       scale is computed against the screen, not the chart's own width */
     .org-scroll {
         position: relative !important;
         width: 100vw !important; max-width: 100vw !important;
         margin-left: 50% !important; transform: translateX(-50%) !important;
         box-sizing: border-box !important;
-        overflow-x: auto !important; overflow-y: hidden !important;
-        -webkit-overflow-scrolling: touch !important;
-        padding: 0.5rem 1rem 1rem !important;
+        overflow: hidden !important;
+        padding: 0.5rem 0.5rem 1rem !important;
     }
-    .org-scroll::-webkit-scrollbar { height: 4px !important; }
-    .org-scroll::-webkit-scrollbar-thumb { background: var(--accent-color) !important; border-radius: 3px !important; }
 
-    /* The real, original tree at a readable size with all connectors intact */
+    /* Keep the original layout; JS applies transform: scale(...) to fit */
     .org-template-wrapper {
-        transform: none !important;
-        zoom: 0.6 !important;
+        transform-origin: top left !important;
         width: max-content !important;
         max-width: none !important;
         min-width: 0 !important;
-        margin: 0 auto !important;
+        margin: 0 !important;
+        zoom: 1 !important;
     }
     .org-v-line, .org-h-split, .org-left-line, .org-h-connector { display: block !important; }
-
-    /* Soft edge fades hint that the chart can be swiped */
-    .org-section::before,
-    .org-section::after {
-        content: '' !important; position: absolute !important; top: 0; bottom: 0;
-        width: 28px !important; z-index: 4 !important; pointer-events: none !important;
-    }
-    .org-section::before { left: 0; background: linear-gradient(90deg, var(--bg-color), transparent) !important; }
-    .org-section::after { right: 0; background: linear-gradient(270deg, var(--bg-color), transparent) !important; }
 }
 
 /* ---- Premium polish for the org cards (all screen sizes; sizes unchanged) ---- */
