@@ -3859,15 +3859,19 @@ html, body {
         display: flex !important;
         align-items: center;
         justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 8px;
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
         background: rgba(255, 255, 255, 0.9);
         border: 1px solid rgba(0,0,0,0.1);
         color: #333;
         cursor: pointer;
         z-index: 10000;
         pointer-events: auto;
+    }
+    .mobile-dock-toggle svg {
+        width: 16px !important;
+        height: 16px !important;
     }
     
     [data-theme="dark"] .mobile-dock-toggle {
