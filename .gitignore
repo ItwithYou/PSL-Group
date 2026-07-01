@@ -8,3 +8,10 @@ uploads/
 .DS_Store
 Thumbs.db
 *.log
+
+# Stray MCP/tooling dumps (not part of the site)
+tools.json
+relevant_tools.json
+
+# Build output for Pages deploy
+_site/
