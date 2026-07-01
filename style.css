@@ -4793,79 +4793,79 @@ a, button, .dock-item, .theme-toggle, .lang-btn-option,
 }
 
 /* frost every card so the Tiffany blue glows softly through the glass */
-[data-theme="tiffany"], [data-theme="gold"] .project-entry,
-[data-theme="tiffany"], [data-theme="gold"] .roadmap-card,
-[data-theme="tiffany"], [data-theme="gold"] .portfolio-card,
-[data-theme="tiffany"], [data-theme="gold"] .vision-glass-card,
-[data-theme="tiffany"], [data-theme="gold"] .org-card,
-[data-theme="tiffany"], [data-theme="gold"] .step-content,
-[data-theme="tiffany"], [data-theme="gold"] .org-capsule:not(.solid-gold),
-[data-theme="tiffany"], [data-theme="gold"] .spec-chip,
-[data-theme="tiffany"], [data-theme="gold"] .stat-item,
-[data-theme="tiffany"], [data-theme="gold"] .contact-card,
-[data-theme="tiffany"], [data-theme="gold"] .about-pillar,
-[data-theme="tiffany"], [data-theme="gold"] .activity-card {
+[data-theme="tiffany"] .project-entry,
+[data-theme="tiffany"] .roadmap-card,
+[data-theme="tiffany"] .portfolio-card,
+[data-theme="tiffany"] .vision-glass-card,
+[data-theme="tiffany"] .org-card,
+[data-theme="tiffany"] .step-content,
+[data-theme="tiffany"] .org-capsule:not(.solid-gold),
+[data-theme="tiffany"] .spec-chip,
+[data-theme="tiffany"] .stat-item,
+[data-theme="tiffany"] .contact-card,
+[data-theme="tiffany"] .about-pillar,
+[data-theme="tiffany"] .activity-card {
     backdrop-filter: blur(20px) saturate(150%);
     -webkit-backdrop-filter: blur(20px) saturate(150%);
 }
 
 /* --- TEXT ON THE TEAL CANVAS: ivory headings, gold kicker, light body --- */
-[data-theme="tiffany"], [data-theme="gold"] .section-title,
-[data-theme="tiffany"], [data-theme="gold"] .hero-title,
-[data-theme="tiffany"], [data-theme="gold"] .contact-title,
-[data-theme="tiffany"], [data-theme="gold"] .tier-header h3 {
+[data-theme="tiffany"] .section-title,
+[data-theme="tiffany"] .hero-title,
+[data-theme="tiffany"] .contact-title,
+[data-theme="tiffany"] .tier-header h3 {
     color: var(--canvas-ink);
 }
-[data-theme="tiffany"], [data-theme="gold"] .hero-description,
-[data-theme="tiffany"], [data-theme="gold"] .about-lead,
-[data-theme="tiffany"], [data-theme="gold"] .portfolio-subtitle,
-[data-theme="tiffany"], [data-theme="gold"] .vision-paragraph,
-[data-theme="tiffany"], [data-theme="gold"] .tier-subtitle,
-[data-theme="tiffany"], [data-theme="gold"] .contact-sub,
-[data-theme="tiffany"], [data-theme="gold"] .info-label,
-[data-theme="tiffany"], [data-theme="gold"] .info-value {
+[data-theme="tiffany"] .hero-description,
+[data-theme="tiffany"] .about-lead,
+[data-theme="tiffany"] .portfolio-subtitle,
+[data-theme="tiffany"] .vision-paragraph,
+[data-theme="tiffany"] .tier-subtitle,
+[data-theme="tiffany"] .contact-sub,
+[data-theme="tiffany"] .info-label,
+[data-theme="tiffany"] .info-value {
     color: var(--text-muted);
 }
-[data-theme="tiffany"], [data-theme="gold"] .sub-heading { color: var(--canvas-gold); }
-[data-theme="tiffany"], [data-theme="gold"] .sub-heading::before {
+[data-theme="tiffany"] .sub-heading { color: var(--canvas-gold); }
+[data-theme="tiffany"] .sub-heading::before {
     background: var(--canvas-gold);
     box-shadow: 0 0 0 3px rgba(189,147,45,0.18), 0 0 10px rgba(189,147,45,0.5);
 }
-[data-theme="tiffany"], [data-theme="gold"] .section-divider {
+[data-theme="tiffany"] .section-divider {
     background: linear-gradient(90deg, var(--canvas-gold), rgba(14,58,54,0.12) 55%, transparent) !important;
 }
 
 /* text inside the white cards: deep teal headings, muted teal body */
-[data-theme="tiffany"], [data-theme="gold"] .about-pillar h4,
-[data-theme="tiffany"], [data-theme="gold"] .portfolio-card h4,
-[data-theme="tiffany"], [data-theme="gold"] .roadmap-card h4,
-[data-theme="tiffany"], [data-theme="gold"] .project-entry-name,
-[data-theme="tiffany"], [data-theme="gold"] .activity-title,
-[data-theme="tiffany"], [data-theme="gold"] .org-capsule:not(.solid-gold) h4,
-[data-theme="tiffany"], [data-theme="gold"] .sub-chip-name,
-[data-theme="tiffany"], [data-theme="gold"] .hero-meta .meta-value,
-[data-theme="tiffany"], [data-theme="gold"] .glass-text {
+[data-theme="tiffany"] .about-pillar h4,
+[data-theme="tiffany"] .portfolio-card h4,
+[data-theme="tiffany"] .roadmap-card h4,
+[data-theme="tiffany"] .project-entry-name,
+[data-theme="tiffany"] .activity-title,
+[data-theme="tiffany"] .org-capsule:not(.solid-gold) h4,
+[data-theme="tiffany"] .sub-chip-name,
+[data-theme="tiffany"] .hero-meta .meta-value,
+[data-theme="tiffany"] .glass-text {
     color: var(--text-color);
 }
-[data-theme="tiffany"], [data-theme="gold"] .about-pillar p,
-[data-theme="tiffany"], [data-theme="gold"] .portfolio-card .card-desc,
-[data-theme="tiffany"], [data-theme="gold"] .roadmap-card p,
-[data-theme="tiffany"], [data-theme="gold"] .project-entry-detail,
-[data-theme="tiffany"], [data-theme="gold"] .activity-excerpt,
-[data-theme="tiffany"], [data-theme="gold"] .org-capsule:not(.solid-gold) p,
-[data-theme="tiffany"], [data-theme="gold"] .card-list li,
-[data-theme="tiffany"], [data-theme="gold"] .past-list li {
+[data-theme="tiffany"] .about-pillar p,
+[data-theme="tiffany"] .portfolio-card .card-desc,
+[data-theme="tiffany"] .roadmap-card p,
+[data-theme="tiffany"] .project-entry-detail,
+[data-theme="tiffany"] .activity-excerpt,
+[data-theme="tiffany"] .org-capsule:not(.solid-gold) p,
+[data-theme="tiffany"] .card-list li,
+[data-theme="tiffany"] .past-list li {
     color: var(--text-muted);
 }
 
 /* clean frosted-white surfaces with a thin gold outline (no gold fill) */
-[data-theme="tiffany"], [data-theme="gold"] .hero-meta,
-[data-theme="tiffany"], [data-theme="gold"] .vision-glass-card,
-[data-theme="tiffany"], [data-theme="gold"] .sub-chip,
-[data-theme="tiffany"], [data-theme="gold"] .info-modal-card,
-[data-theme="tiffany"], [data-theme="gold"] .company-info-trigger,
-[data-theme="tiffany"], [data-theme="gold"] .contact-form-container,
-[data-theme="tiffany"], [data-theme="gold"] .past-projects-container {
+[data-theme="tiffany"] .hero-meta,
+[data-theme="tiffany"] .vision-glass-card,
+[data-theme="tiffany"] .sub-chip,
+[data-theme="tiffany"] .info-modal-card,
+[data-theme="tiffany"] .company-info-trigger,
+[data-theme="tiffany"] .contact-form-container,
+[data-theme="tiffany"] .past-projects-container {
     background: linear-gradient(160deg, rgba(255,255,255,0.66), rgba(255,255,255,0.34)) !important;
     border: 1px solid rgba(189,147,45,0.42) !important;
     backdrop-filter: blur(22px) saturate(150%);
@@ -4873,9 +4873,9 @@ a, button, .dock-item, .theme-toggle, .lang-btn-option,
 }
 
 /* icon orbs become GOLD CIRCLE LINES — a thin gold ring, light fill, gold mark */
-[data-theme="tiffany"], [data-theme="gold"] .about-pillar-icon,
-[data-theme="tiffany"], [data-theme="gold"] .hero-meta .meta-icon-box,
-[data-theme="tiffany"], [data-theme="gold"] .card-icon {
+[data-theme="tiffany"] .about-pillar-icon,
+[data-theme="tiffany"] .hero-meta .meta-icon-box,
+[data-theme="tiffany"] .card-icon {
     background: rgba(255,255,255,0.45) !important;
     background-image: none !important;
     border: 1.5px solid var(--gold) !important;
@@ -4884,12 +4884,12 @@ a, button, .dock-item, .theme-toggle, .lang-btn-option,
     box-shadow: 0 4px 14px -7px rgba(189,147,45,0.5),
                 inset 0 0 0 1px rgba(255,255,255,0.5) !important;
 }
-[data-theme="tiffany"], [data-theme="gold"] .about-pillar-icon::after,
-[data-theme="tiffany"], [data-theme="gold"] .hero-meta .meta-icon-box::after { display: none; }
-[data-theme="tiffany"], [data-theme="gold"] .glass-icon { color: var(--gold); }
+[data-theme="tiffany"] .about-pillar-icon::after,
+[data-theme="tiffany"] .hero-meta .meta-icon-box::after { display: none; }
+[data-theme="tiffany"] .glass-icon { color: var(--gold); }
 
 /* the tier badge: a refined gold OUTLINE pill (gold line, not a gold fill) */
-[data-theme="tiffany"], [data-theme="gold"] .tier-badge {
+[data-theme="tiffany"] .tier-badge {
     background: rgba(255,255,255,0.35) !important;
     border: 1.5px solid var(--gold) !important;
     color: #8a6916 !important;
