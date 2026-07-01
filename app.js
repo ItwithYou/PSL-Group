@@ -217,6 +217,8 @@ function initTheme() {
             currentTheme = 'dark';
         } else if (currentTheme === 'dark') {
             currentTheme = 'tiffany';
+        } else if (currentTheme === 'tiffany') {
+            currentTheme = 'gold';
         } else {
             currentTheme = 'light';
         }
