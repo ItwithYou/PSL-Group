@@ -5165,10 +5165,13 @@ a, button, .dock-item, .theme-toggle, .lang-btn-option,
     clip-path: polygon(46% 0, 54% 0, 58% 100%, 42% 100%);
     background: repeating-linear-gradient(180deg,
         rgba(244,214,150,0.95) 0 16px, transparent 16px 54px);
-    animation: roadLaneMove 1.5s linear infinite;
+    /* shift exactly one pattern period (54px) so the loop is perfectly
+       seamless — a continuous drift, not a stuttering "loading" restart */
+    animation: roadLaneMove 2.4s linear infinite;
 }
 @keyframes roadLaneMove {
-    to { background-position-y: 70px; }
+    from { background-position-y: 0; }
+    to   { background-position-y: 54px; }
 }
 
 /* --- milestones along the road --- */
